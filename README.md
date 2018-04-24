@@ -5,12 +5,9 @@
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
-|note_id|string|null: false, unique: true|
-|mail|string|null: false, unique: true|
-|pass|string|null: false, unique: true|
 |credit_number|integer||
-|profile|integer||
-|img|integer||
+|profile|string||
+|image|string||
 
 ### Association
 - has_many :contributes
@@ -35,7 +32,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |content|string||
-|user_id|integer|null: false,foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |contribute_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -47,29 +44,29 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key:true|
+|user_id|integer|null: false, foreign_key: true|
 |follow_id|integer|null: false|
 
 ### Association
 - belongs_to :user
 
-## contribute_likeテーブル
+## contribute_likesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key:true|
-|contribute|integer|null: false, foreign_key:true|
+|user_id|integer|null: false, foreign_key: true|
+|contribute_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
 - belongs_to :contribute
 
-## comment_likeテーブル
+## comment_likesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key:true|
-|comment_id|integer|null: false, foreign_key:true|
+|user_id|integer|null: false, foreign_key: true|
+|comment_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
