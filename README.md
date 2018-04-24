@@ -1,24 +1,77 @@
-# README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|note_id|string|null: false, unique: true|
+|mail|string|null: false, unique: true|
+|pass|string|null: false, unique: true|
+|credit_number|integer||
+|profile|integer||
+|img|integer||
 
-* Ruby version
+### Association
+- has_many :contributes
+- has_many :comments
+- has_many :follows
 
-* System dependencies
 
-* Configuration
+## contributesテーブル
 
-* Database creation
+|Column|Type|Options|
+|------|----|-------|
+|image|string||
+|content|string||
+|user_id|integer|null: false, foreign_key: true|
 
-* Database initialization
+### Association
+- belongs_to :user
+- has_many :comments
 
-* How to run the test suite
+## commentsテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+|Column|Type|Options|
+|------|----|-------|
+|content|string||
+|user_id|integer|null: false,foreign_key: true|
+|contribute_id|integer|null: false, foreign_key: true|
 
-* Deployment instructions
+### Association
+- belongs_to :user
+- belongs_to :contribute
 
-* ...
+
+## followsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key:true|
+|follow_id|integer|null: false|
+
+### Association
+- belongs_to :user
+
+## contribute_likeテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key:true|
+|contribute|integer|null: false, foreign_key:true|
+
+### Association
+- belongs_to :user
+- belongs_to :contribute
+
+## comment_likeテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key:true|
+|comment_id|integer|null: false, foreign_key:true|
+
+### Association
+- belongs_to :user
+- belongs_to :comment
+
