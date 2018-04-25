@@ -43,6 +43,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'ovirt-engine-sdk', '>=4.2.3'
 end
 
 group :development do
