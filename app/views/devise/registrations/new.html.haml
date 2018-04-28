@@ -1,0 +1,25 @@
+.header
+  %h2.logo note
+.content
+  %p.content__message noteに登録する
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .content__field
+      = f.label :ニックネーム（登録後に変更可能）
+      %br/
+      = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例：ノート君（任意）", class: "content__field-box"
+    .content__field
+      = f.label :メールアドレス
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例：mail@note.mu", class: "content__field-box"
+    .content__field
+      = f.label :パスワード
+      %br/
+      = f.password_field :password, autocomplete: "off", placeholder: "例：６文字以上の半角英数", class: "content__field-box"
+    %p.agree
+      %input{:type=> "checkbox"}
+      %a.rule 利用規約
+      に同意する
+    .actions
+      = f.submit "登録する（無料）", class: "regist_button"
+  = render "devise/shared/links"
