@@ -20,6 +20,7 @@ html,body{
     text-align: center;
     background-color: #ffffff;
     box-sizing: border-box;
+    font-size: 12px;
     &__message{
       font-size: 22px;
       font-weight: bold;
@@ -27,7 +28,6 @@ html,body{
       margin-bottom: 30px;
     }
     &__field{
-      font-size: 12px;
       width: 100%;
       text-align: left;
       margin-bottom: 20px;
@@ -46,17 +46,65 @@ html,body{
     .agree{
       margin-bottom: 15px;
       font-size: 11px;
-      .rule{
-        color: #249f80;
-      }
     }
-    .regist_button{
+    .regist{
       line-height: 48px;
       background-color: #2cb696;
       font-size: 16px;
       font-weight: bold;
       width: 100%;
+    }
+    &__sns{
+      font-weight: bold;
+      margin-top: 20px;
+      @include border_top;
+      .regist__sub-title{
+        margin: 20px 0 10px 0;
+      }
+      #twitter{
+        background-color: #00acee;
+        display: inline-block;
+        height: 45px;
+        line-height: 45px;
+        width: 155px;
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+      #facebook{
+        background-color: #3b5998;
+        display: inline-block;
+        height: 45px;
+        line-height: 45px;
+        width: 155px;
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+      .line{
+        width: 155px;
+        display: inline-block;
+      }
+      .fa-lg{
+        position: relative;
+        right: 30px;
+      }
+    }
+    &__login{
+      @include border_top;
+      margin-top: 15px;
+      padding: 15px;
+      .login{
+        margin-bottom: 15px;
+        display: block;
+      }
+    }
+    .button{
+      font-weight: bold;
+      border-radius: 4px;
       color: #fff;
+    }
+    .green{
+      color: #249f80;
+      text-decoration: none;
     }
   }
 }
