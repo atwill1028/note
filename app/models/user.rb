@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :contributes
   has_many :comments
   has_many :follows
+  validates :agreement, acceptance: true
 end

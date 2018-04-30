@@ -20,14 +20,16 @@ html,body{
     text-align: center;
     background-color: #ffffff;
     box-sizing: border-box;
+    font-size: 12px;
     &__message{
       font-size: 22px;
       font-weight: bold;
       padding-top: 25px;
+    }
+    .u-mbM{
       margin-bottom: 30px;
     }
     &__field{
-      font-size: 12px;
       width: 100%;
       text-align: left;
       margin-bottom: 20px;
@@ -46,17 +48,58 @@ html,body{
     .agree{
       margin-bottom: 15px;
       font-size: 11px;
-      .rule{
-        color: #249f80;
-      }
     }
-    .regist_button{
+    .regist{
       line-height: 48px;
       background-color: #2cb696;
       font-size: 16px;
       font-weight: bold;
       width: 100%;
-      color: #fff;
+    }
+    &__sns{
+      font-weight: bold;
+      margin-top: 20px;
+      @include border_top;
+      .regist__sub-title{
+        margin: 20px 0 10px 0;
+      }
+
+      .line{
+        width: 155px;
+        display: inline-block;
+      }
+    }
+    .twitter{
+      background-color: #00acee;
+      display: block;
+      height: 45px;
+      line-height: 45px;
+      width: 100%;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    .facebook{
+      background-color: #3b5998;
+      display: block;
+      height: 45px;
+      line-height: 45px;
+      width: 100%;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    &__login{
+      @include border_top;
+      margin-top: 15px;
+      padding: 15px;
+      .login{
+        margin-bottom: 15px;
+        display: block;
+      }
+    }
+
+    .green{
+      color: #249f80;
+      text-decoration: none;
     }
   }
 }
