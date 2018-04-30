@@ -1,7 +1,6 @@
-.header
-  %h2.logo note
+= render "devise/shared/header"
 .content
-  %p.content__message noteに登録する
+  %p.content__message.u-mbM noteに登録する
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = devise_error_messages!
     .content__field
@@ -17,8 +16,8 @@
       %br/
       = f.password_field :password, autocomplete: "off", placeholder: "例：６文字以上の半角英数", class: "content__field-box"
     %p.agree
-      %input{:type=> "checkbox"}
-      %a.green 利用規約
+      = f.check_box :agreement
+      =link_to "利用規約", "https://note.mu/terms", class: "green", target: "_blank"
       に同意する
     .actions
       = f.submit "登録する（無料）", class: "regist button"
@@ -26,16 +25,16 @@
     %p.regist__sub-title ソーシャルアカウントで登録
     %ul
       %li.line
-        %a#twitter.button
-          = fa_icon "twitter", class: "fa-lg"
+        %a.twitter.button
+          = fa_icon "twitter", class: "fa-lg icon-small"
           Twitter
       %li.line
-        %a#facebook.button
-          = fa_icon "facebook", class: "fa-lg"
+        %a.facebook.button
+          = fa_icon "facebook", class: "fa-lg icon-small"
           Facebook
   .content__login
     / = render "devise/shared/links", class: "green"
     = link_to "ログイン", new_user_session_path, class: "green login"
     %p
       cakesアカウントをお持ちの方は
-      %a.green こちら
+      =link_to "こちら", new_user_session_path, class: "green"

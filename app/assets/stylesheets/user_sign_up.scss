@@ -25,6 +25,8 @@ html,body{
       font-size: 22px;
       font-weight: bold;
       padding-top: 25px;
+    }
+    .u-mbM{
       margin-bottom: 30px;
     }
     &__field{
@@ -61,32 +63,29 @@ html,body{
       .regist__sub-title{
         margin: 20px 0 10px 0;
       }
-      #twitter{
-        background-color: #00acee;
-        display: inline-block;
-        height: 45px;
-        line-height: 45px;
-        width: 155px;
-        font-size: 13px;
-        margin-bottom: 10px;
-      }
-      #facebook{
-        background-color: #3b5998;
-        display: inline-block;
-        height: 45px;
-        line-height: 45px;
-        width: 155px;
-        font-size: 13px;
-        margin-bottom: 10px;
-      }
+
       .line{
         width: 155px;
         display: inline-block;
       }
-      .fa-lg{
-        position: relative;
-        right: 30px;
-      }
+    }
+    .twitter{
+      background-color: #00acee;
+      display: block;
+      height: 45px;
+      line-height: 45px;
+      width: 100%;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    .facebook{
+      background-color: #3b5998;
+      display: block;
+      height: 45px;
+      line-height: 45px;
+      width: 100%;
+      font-size: 13px;
+      margin-bottom: 10px;
     }
     &__login{
       @include border_top;
@@ -97,11 +96,7 @@ html,body{
         display: block;
       }
     }
-    .button{
-      font-weight: bold;
-      border-radius: 4px;
-      color: #fff;
-    }
+
     .green{
       color: #249f80;
       text-decoration: none;
