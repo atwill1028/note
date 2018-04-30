@@ -1,17 +1,24 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+= render "devise/shared/header"
+.content
+  %p.content__message ログイン
+  %p.content__text.u-mbM
+    cakesのアカウントをお持ちの方は
+    %br
+    このページからログインできます。
+  %a.facebook.button
+    = fa_icon "facebook", class: "fa-lg icon-small"
+    Facebookでログイン
+  %a.twitter.button
+    = fa_icon "twitter", class: "fa-lg icon-small"
+    Twitterでログイン
+  %p.space-bottom-1h.space-top-2.text-tall メールアドレスでログイン
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .content__field
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス or note ID", class: "content__field-box"
+    .content__field
+      = f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "content__field-box"
+      = link_to "パスワードを忘れた方", new_user_password_path, class: "text-link"
+    .actions
+      = f.submit "ログイン", class: "regist button"
+  %p.space-top-1
+    = link_to "会員登録はこちら", new_user_registration_path, class: "text-link"
