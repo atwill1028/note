@@ -1,0 +1,46 @@
+.header__container
+  .header__top
+    = link_to image_tag("https://d2l930y2yx77uc.cloudfront.net/assets/renewal/logo-6405eaba4abaa126590b18753faca863c49215765e99bbc54df5ad8ad059914e.svg"), contributes_path, class: "icon"
+    .header__top__right
+      %ul
+        %li.inline
+          = link_to "ログイン", new_user_session_path, class: "login__button"
+        %li.inline
+          = link_to "新規登録", new_user_registration_path, class: "regist__button"
+        %li.inline
+          = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_30_search-ecd6e84558c1939f3fcf34ada31bbbaac1228158c2b1fccc779c290affbe52ef.svg", class: "search__button"
+  .header__navigation
+    %ul
+      %li.inline
+        = link_to "おすすめ", contributes_path, class: "navigation_menu"
+      %li.inline
+        = link_to "ピックアップ", contributes_path, class: "navigation_menu"
+      %li.inline
+        = link_to "注目カテゴリ", contributes_path, class: "navigation_menu"
+      %li.inline
+        = link_to contributes_path, class: "navigation_menu" do
+          人気タグ
+          = fa_icon "caret-down", class: "navigation_menu"
+      %li.inline.question
+        = link_to contributes_path do
+          = fa_icon "question-circle", class: "fa-lg question"
+  .header__category
+    %ul.inline
+      %li.inline
+        = link_to "マンガ", contributes_path, class: "category_menu"
+      %li.inline
+        = link_to "コラム", contributes_path, class: "category_menu"
+      %li.inline
+        = link_to "小説", contributes_path, class: "category_menu"
+      %li.inline
+        = link_to "写真", contributes_path, class: "category_menu"
+      %li.inline
+        = link_to "サウンド", contributes_path, class: "category_menu"
+      %li.inline
+        = link_to "ビジネス", contributes_path, class: "category_menu"
+      %li.inline
+        = link_to "ライフスタイル", contributes_path, class: "category_menu"
+      %li.inline
+        = link_to "テクノロジー", contributes_path, class: "category_menu"
+      %li.inline
+        = link_to "エンタメ", contributes_path, class: "category_menu"
