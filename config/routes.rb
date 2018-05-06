@@ -3,19 +3,19 @@ Rails.application.routes.draw do
   root "contributes#index"
   resources :contributes, only: [:index, :new, :create] do
     collection do
-      resources :manga, only: [:index]
-      resources :column, only: [:index]
-      resources :novel, only: [:index]
-      resources :photo, only: [:index]
-      resources :music, only: [:index]
-      resources :business, only: [:index]
-      resources :lifestyle, only: [:index]
-      resources :tech, only: [:index]
-      resources :entertainment, only: [:index]
-      resources :pickup, only: [:index]
-      resources :categories, only: [:index]
-      resources :hashtag, only: [:index]
-      resources :help, only: [:index]
+      resources :mangas, only: :index
+      resources :columns, only: :index
+      resources :novels, only: :index
+      resources :photos, only: :index
+      resources :musics, only: :index
+      resources :businesses, only: :index
+      resources :lifestyles, only: :index
+      resources :techs, only: :index
+      resources :entertainments, only: :index
+      resources :pickups, only: :index
+      resources :categories, only: :index
+      resources :hashtags, only: :index
+      resources :helps, only: :index
     end
   end
 end
