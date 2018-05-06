@@ -1,12 +1,4 @@
 $(function(){
-  $(".login__button").hover(
-    function(){
-      $(this).css("color", "#222222");
-    },
-    function(){
-      $(this).css("color","#787c7b")
-    }
-  )
   $(".navigation_menu.not_selected, .navigation_question").hover(
     function(){
       $(this).css("color", "#222222");

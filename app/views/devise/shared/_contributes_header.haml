@@ -14,33 +14,33 @@
       %li.inline
         = link_to "おすすめ", contributes_path, {:class => "#{(@category == 'index')? 'navigation_menu selected' : 'navigation_menu not_selected'}"}
       %li.inline
-        = link_to "ピックアップ", contributes_pickup_path, {:class => "#{(@category == 'pickup')? 'navigation_menu selected' : 'navigation_menu not_selected'}"}
+        = link_to "ピックアップ", pickup_contributes_path, {:class => "#{(@category == 'pickup')? 'navigation_menu selected' : 'navigation_menu not_selected'}"}
       %li.inline
-        = link_to "注目カテゴリ", contributes_categories_path, {:class => "#{(@category == 'categories')? 'navigation_menu selected' : 'navigation_menu not_selected'}"}
+        = link_to "注目カテゴリ", categories_contributes_path, {:class => "#{(@category == 'categories')? 'navigation_menu selected' : 'navigation_menu not_selected'}"}
       %li.inline
-        = link_to contributes_hashtag_path, {:class => "#{(@category == 'hashtag')? 'navigation_menu selected' : 'navigation_menu not_selected'}"} do
+        = link_to hashtag_contributes_path, {:class => "#{(@category == 'hashtag')? 'navigation_menu selected' : 'navigation_menu not_selected'}"} do
           人気タグ
           = fa_icon "caret-down", class: "navigation_menu"
       %li.inline.question
-        = link_to contributes_help_path, class: "navigation_question" do
+        = link_to help_contributes_path, class: "navigation_question" do
           = fa_icon "question-circle", class: "fa-lg question-icon"
   .header__category
     %ul.inline
       %li.inline
-        = link_to "マンガ", contributes_manga_path, {:class => "#{(@category == 'manga')? 'category_menu selected' : 'category_menu'}"}
+        = link_to "マンガ", manga_contributes_path, {:class => "#{(@category == 'manga')? 'category_menu selected' : 'category_menu'}"}
       %li.inline
-        = link_to "コラム", contributes_column_path, {:class => "#{(@category == 'column')? 'category_menu selected' : 'category_menu'}"}
+        = link_to "コラム", column_contributes_path, {:class => "#{(@category == 'column')? 'category_menu selected' : 'category_menu'}"}
       %li.inline
-        = link_to "小説", contributes_novel_path, {:class => "#{(@category == 'novel')? 'category_menu selected' : 'category_menu'}"}
+        = link_to "小説", novel_contributes_path, {:class => "#{(@category == 'novel')? 'category_menu selected' : 'category_menu'}"}
       %li.inline
-        = link_to "写真", contributes_photo_path, {:class => "#{(@category == 'photo')? 'category_menu selected' : 'category_menu'}"}
+        = link_to "写真", photo_contributes_path, {:class => "#{(@category == 'photo')? 'category_menu selected' : 'category_menu'}"}
       %li.inline
-        = link_to "サウンド", contributes_music_path, {:class => "#{(@category == 'music')? 'category_menu selected' : 'category_menu'}"}
+        = link_to "サウンド", music_contributes_path, {:class => "#{(@category == 'music')? 'category_menu selected' : 'category_menu'}"}
       %li.inline
-        = link_to "ビジネス", contributes_business_path, {:class => "#{(@category == 'business')? 'category_menu selected' : 'category_menu'}"}
+        = link_to "ビジネス", business_contributes_path, {:class => "#{(@category == 'business')? 'category_menu selected' : 'category_menu'}"}
       %li.inline
-        = link_to "ライフスタイル", contributes_lifestyle_path, {:class => "#{(@category == 'lifestyle')? 'category_menu selected' : 'category_menu'}"}
+        = link_to "ライフスタイル", lifestyle_contributes_path, {:class => "#{(@category == 'lifestyle')? 'category_menu selected' : 'category_menu'}"}
       %li.inline
-        = link_to "テクノロジー", contributes_tech_path, {:class => "#{(@category == 'tech')? 'category_menu selected' : 'category_menu'}"}
+        = link_to "テクノロジー", tech_contributes_path, {:class => "#{(@category == 'tech')? 'category_menu selected' : 'category_menu'}"}
       %li.inline
-        = link_to "エンタメ", contributes_entertainment_path, {:class => "#{(@category == 'entertainment')? 'category_menu selected' : 'category_menu'}"}
+        = link_to "エンタメ", entertainment_contributes_path, {:class => "#{(@category == 'entertainment')? 'category_menu selected' : 'category_menu'}"}
