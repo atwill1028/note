@@ -1,0 +1,46 @@
+.header__container
+  .header__top
+    = link_to image_tag("https://d2l930y2yx77uc.cloudfront.net/assets/renewal/logo-6405eaba4abaa126590b18753faca863c49215765e99bbc54df5ad8ad059914e.svg"), contributes_path, class: "icon"
+    .header__top__right
+      %ul
+        %li.inline
+          = link_to "ログイン", new_user_session_path, class: "login__button"
+        %li.inline
+          = link_to "新規登録", new_user_registration_path, class: "regist__button"
+        %li.inline
+          = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_30_search-ecd6e84558c1939f3fcf34ada31bbbaac1228158c2b1fccc779c290affbe52ef.svg", class: "search__button"
+  .header__navigation
+    %ul
+      %li.inline
+        = link_to "おすすめ", contributes_path, {:class => "#{(@category == 'index')? 'navigation_menu selected' : 'navigation_menu not_selected'}"}
+      %li.inline
+        = link_to "ピックアップ", pickups_path, {:class => "#{(@category == 'pickups')? 'navigation_menu selected' : 'navigation_menu not_selected'}"}
+      %li.inline
+        = link_to "注目カテゴリ", categories_path, {:class => "#{(@category == 'categories')? 'navigation_menu selected' : 'navigation_menu not_selected'}"}
+      %li.inline
+        = link_to hashtags_path, {:class => "#{(@category == 'hashtags')? 'navigation_menu selected' : 'navigation_menu not_selected'}"} do
+          人気タグ
+          = fa_icon "caret-down", class: "navigation_menu"
+      %li.inline.question
+        = link_to helps_path, class: "navigation_question" do
+          = fa_icon "question-circle", class: "fa-lg question-icon"
+  .header__category
+    %ul.inline
+      %li.inline
+        = link_to "マンガ", mangas_path, {:class => "#{(@category == 'mangas')? 'category_menu selected' : 'category_menu'}"}
+      %li.inline
+        = link_to "コラム", columns_path, {:class => "#{(@category == 'columns')? 'category_menu selected' : 'category_menu'}"}
+      %li.inline
+        = link_to "小説", novels_path, {:class => "#{(@category == 'novels')? 'category_menu selected' : 'category_menu'}"}
+      %li.inline
+        = link_to "写真", photos_path, {:class => "#{(@category == 'photos')? 'category_menu selected' : 'category_menu'}"}
+      %li.inline
+        = link_to "サウンド", musics_path, {:class => "#{(@category == 'musics')? 'category_menu selected' : 'category_menu'}"}
+      %li.inline
+        = link_to "ビジネス", businesses_path, {:class => "#{(@category == 'businesses')? 'category_menu selected' : 'category_menu'}"}
+      %li.inline
+        = link_to "ライフスタイル", lifestyles_path, {:class => "#{(@category == 'lifestyles')? 'category_menu selected' : 'category_menu'}"}
+      %li.inline
+        = link_to "テクノロジー", techs_path, {:class => "#{(@category == 'techs')? 'category_menu selected' : 'category_menu'}"}
+      %li.inline
+        = link_to "エンタメ", entertainments_path, {:class => "#{(@category == 'entertainments')? 'category_menu selected' : 'category_menu'}"}

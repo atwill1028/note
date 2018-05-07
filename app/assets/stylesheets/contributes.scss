@@ -9,9 +9,9 @@
     .icon{
       @include height_center;
     }
-    .header__top__right{
-      margin-left: auto;
-      width: 200px;
+    &__right{
+      margin-left: 700px;
+      width: 600px;
       ul{
         position: relative;
         top: 12px;
@@ -23,6 +23,9 @@
             color: #787c7b;
             padding-right: 16px;
             padding-left: 16px;
+          }
+          .login__button:hover{
+            color: #222222;
           }
           .regist__button{
             font-size: 12px;
@@ -50,16 +53,34 @@
       display: table-cell;
       vertical-align: middle;
       .navigation_menu{
-        padding: 8px;
+        padding: 17px 8px;
         font-size: 14px;
         text-decoration: none;
         color: #787c7b;
       }
+      .navigation_menu.selected{
+        color: #222222;
+        border-bottom: 1px solid black;
+      }
+      .navigation_menu.not_selected:hover{
+        color: #222222;
+        border-bottom: 1px solid black;
+      }
       .question{
-        line-height: 24px;
-        text-align: right;
-        color: #A8ABB1;
-        margin-left: 260px;
+        margin-left: 515px;
+        .navigation_question{
+          margin: 0 auto;
+          padding: 17px 0px;
+          color: #A8ABB1;
+          .question-icon{
+            padding-right: 8px;
+            padding-left: 8px;
+          }
+        }
+        .navigation_question:hover{
+          color: #222222;
+          border-bottom: 1px solid black;
+        }
       }
     }
   }
@@ -78,6 +99,12 @@
         font-size: 14px;
         line-height: 21px;
         padding: 16px 14px;
+      }
+      .category_menu:hover{
+        color: #222222;
+      }
+      .category_menu.selected{
+        color: #222222;
       }
     }
   }
