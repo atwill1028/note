@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  # before_action :authenticate_user!
   before_action :get_category
   before_action :get_current_user_id, if: :user_signed_in?
   before_action :get_current_user_image, if: :user_signed_in?
@@ -21,7 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_current_user_image
-    @current_user_image=current_user.image
+    @current_user_image = current_user.image
   end
 
   def configure_permitted_parameters
