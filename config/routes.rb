@@ -18,4 +18,5 @@ Rails.application.routes.draw do
       resources :helps, only: :index
     end
   end
+  resources :users, only: [:index, :show]
 end

@@ -1,18 +1,35 @@
 .header__container
   .header__top
-    = link_to image_tag("https://d2l930y2yx77uc.cloudfront.net/assets/renewal/logo-6405eaba4abaa126590b18753faca863c49215765e99bbc54df5ad8ad059914e.svg"), contributes_path, class: "icon"
+    -if user_signed_in?
+      = link_to image_tag("https://d2l930y2yx77uc.cloudfront.net/assets/renewal/logo-6405eaba4abaa126590b18753faca863c49215765e99bbc54df5ad8ad059914e.svg"), user_path(@current_user_id), class: "icon"
+    -else
+      = link_to image_tag("https://d2l930y2yx77uc.cloudfront.net/assets/renewal/logo-6405eaba4abaa126590b18753faca863c49215765e99bbc54df5ad8ad059914e.svg"), contributes_path, class: "icon"
     .header__top__right
       %ul
-        %li.inline
-          = link_to "ログイン", new_user_session_path, class: "login__button"
-        %li.inline
-          = link_to "新規登録", new_user_registration_path, class: "regist__button"
-        %li.inline
-          = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_30_search-ecd6e84558c1939f3fcf34ada31bbbaac1228158c2b1fccc779c290affbe52ef.svg", class: "search__button"
+        -if user_signed_in?
+          %li.inline
+            = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_30_search-ecd6e84558c1939f3fcf34ada31bbbaac1228158c2b1fccc779c290affbe52ef.svg", class: "search__button"
+          %li.inline
+            = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_30_notification-8d3ad008212d7ab5372a8c6efae717fd0f273e6f19ac92781c8eb2a0b14850d8.svg", class: "notification__button"
+          %li.inline
+            = image_tag "#{@current_user_image}", class: "user__image"
+          %li.inline.new
+            = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_post_note-e3a56e1d96359d5dba3264135500b5970771e55cc60ceb5206f2de6d22532831.svg", class: "pen__button"
+            %p.new__post ノートを投稿
+        -else
+          %li.inline
+            = link_to "ログイン", new_user_session_path, class: "login__button"
+          %li.inline
+            = link_to "新規登録", new_user_registration_path, class: "regist__button"
+          %li.inline
+            = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_30_search-ecd6e84558c1939f3fcf34ada31bbbaac1228158c2b1fccc779c290affbe52ef.svg", class: "search__button"
   .header__navigation
     %ul
+      -if user_signed_in?
+        %li.inline
+          = link_to "ホーム", user_path(@current_user_id), {:class => "#{(@category == 'users')? 'navigation_menu selected' : 'navigation_menu not_selected'}"}
       %li.inline
-        = link_to "おすすめ", contributes_path, {:class => "#{(@category == 'index')? 'navigation_menu selected' : 'navigation_menu not_selected'}"}
+        = link_to "おすすめ", contributes_path, {:class => "#{(@category == 'contributes')? 'navigation_menu selected' : 'navigation_menu not_selected'}"}
       %li.inline
         = link_to "ピックアップ", pickups_path, {:class => "#{(@category == 'pickups')? 'navigation_menu selected' : 'navigation_menu not_selected'}"}
       %li.inline
