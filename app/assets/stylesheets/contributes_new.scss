@@ -11,10 +11,16 @@
       border: 1px solid #D9D9D9;
       border-radius: 4px;
       padding: 5px 10px;
-      width: 60px;
+      width: 100px;
       text-align: center;
       font-size: 12px;
       cursor: pointer;
+      box-sizing: border-box;
+      display: inline-block;
+    }
+    .cancel_to_mypage{
+      text-decoration: none;
+      color: #000;
     }
   }
 }
@@ -28,21 +34,65 @@
     margin-right: auto;
     padding-top: 40px;
     .note__input__picture{
-      cursor: pointer;
-      .circle_icon{
-        font-size: 50px;
-        color: grey;
+      height: 256px;
+      width: 100%;
+      text-align: center;
+      background-color: #f7f9f9;
+      .picture__buttons{
+        padding-top: 50px;
+        margin-bottom: 16px;
+        .picture__button{
+          display: block;
+          background-color: #ffffff;
+          border-radius: 4px;
+          padding: 4px 16px 0px 16px;
+          min-height: 30px;
+          border: 1px solid #e6e6e6;
+          font-weight: bold;
+          width: 340px;
+          font-size: 16px;
+          margin: 0 auto 8px auto;
+          box-sizing: border-box;
+          .form__mask__image{
+            cursor: pointer;
+            .hidden{
+              display: none;
+            }
+          }
+        }
       }
-      .picture_icon{
-        position: relative;
-        left: 5px;
-        font-size: 25px;
-        color: white;
+      .note__input__account{
+        text-align: center;
+        .note__input__description{
+          text-align: left;
+          color: #787c7b;
+          width: 340px;
+          font-size: 12px;
+        }
       }
     }
-    .note__input__picture:hover{
-      .circle_icon{
-        color: black;
+    .note__input__text{
+      margin-top: 72px;
+      .note__input__title{
+        .note__input__title__type{
+          width: 620px;
+          height: 48px;
+          font-size: 32px;
+          border: none;
+          outline: 0;
+        }
+        .note__input__title__type::placeholder{
+          color: #b3b3b1;
+        }
+      }
+      .note__input__content{
+        margin-top: 30px;
+        .note__input__content__type{
+          width: 620px;
+          height: 36px;
+          border: none;
+          outline: 0;
+        }
       }
     }
   }

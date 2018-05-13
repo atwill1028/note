@@ -1,0 +1,32 @@
+= form_for (@contribute) do |f|
+  .header__for__new
+    -if user_signed_in?
+      = link_to "note", user_path("#{current_user.id}"), class: "center_logo"
+    -else
+      = link_to "note", contributes_path, class: "center_logo"
+    .header__right
+      %ul
+        %li.inline
+          = f.submit "公開設定", class: "button__new"
+        %li.inline
+          = link_to "キャンセル", user_path("#{current_user.id}"), class: "button__new cancel_to_mypage"
+  .note__input
+    .note__input__container
+      .note__input__picture
+        %ul.picture__buttons
+          %li.picture__button
+            = fa_icon "image"
+            みんなのフォトギャラリー(B)から挿入
+          %li.picture__button
+            = f.label :image, class: 'form__mask__image' do
+              パソコンからアップロード
+              = f.file_field :image, class: 'hidden'
+        .note__input__account
+          %p.note__input__description.inline
+            表紙画像を設定しましょう。表紙画像を設定すると、タイムラインで表示されるほか、SNSで共有した際にサムネイルとして表示されます。
+      .note__input__text
+        .note__input__title
+          = f.text_field :title, class: "note__input__title__type", placeholder: "ノートタイトル"
+        .note__input__content
+          = f.text_field :content, class: "note__input__content__type", placeholder: "ノート本文"
+
