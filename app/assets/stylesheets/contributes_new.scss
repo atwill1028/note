@@ -1,0 +1,49 @@
+.header__for__new{
+  background-color: $mainWhiteColor;
+  height: 48px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  .header__right{
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    .button__new{
+      border: 1px solid #D9D9D9;
+      border-radius: 4px;
+      padding: 5px 10px;
+      width: 60px;
+      text-align: center;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  }
+}
+.note__input{
+  background-color: $mainWhiteColor;
+  height: 666px;
+  width: 100%;
+  .note__input__container{
+    width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+    .note__input__picture{
+      cursor: pointer;
+      .circle_icon{
+        font-size: 50px;
+        color: grey;
+      }
+      .picture_icon{
+        position: relative;
+        left: 5px;
+        font-size: 25px;
+        color: white;
+      }
+    }
+    .note__input__picture:hover{
+      .circle_icon{
+        color: black;
+      }
+    }
+  }
+}
