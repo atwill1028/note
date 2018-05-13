@@ -2,11 +2,13 @@
   background-color: $mainWhiteColor;
   height: 48px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
   .header__right{
     float: right;
     position: absolute;
     top: 10px;
     right: 10px;
+
     .button__new{
       border: 1px solid #D9D9D9;
       border-radius: 4px;
@@ -28,19 +30,23 @@
   background-color: $mainWhiteColor;
   height: 666px;
   width: 100%;
+
   .note__input__container{
     width: 620px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 40px;
+
     .note__input__picture{
       height: 256px;
       width: 100%;
       text-align: center;
       background-color: #f7f9f9;
+
       .picture__buttons{
         padding-top: 50px;
         margin-bottom: 16px;
+
         .picture__button{
           display: block;
           background-color: #ffffff;
@@ -53,8 +59,10 @@
           font-size: 16px;
           margin: 0 auto 8px auto;
           box-sizing: border-box;
+
           .form__mask__image{
             cursor: pointer;
+
             .hidden{
               display: none;
             }
@@ -63,6 +71,7 @@
       }
       .note__input__account{
         text-align: center;
+
         .note__input__description{
           text-align: left;
           color: #787c7b;
@@ -73,7 +82,9 @@
     }
     .note__input__text{
       margin-top: 72px;
+
       .note__input__title{
+
         .note__input__title__type{
           width: 620px;
           height: 48px;
@@ -87,6 +98,7 @@
       }
       .note__input__content{
         margin-top: 30px;
+
         .note__input__content__type{
           width: 620px;
           height: 36px;
