@@ -7,7 +7,10 @@ class ContributesController < ApplicationController
 
   def create
     @contribute = @user.contributes.build(contribute_params)
-    @contribute.save
+    if @contribute.save
+    else
+      render :index
+    end
   end
 
   private
