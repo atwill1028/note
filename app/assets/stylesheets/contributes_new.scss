@@ -1,15 +1,15 @@
-.header__for__new{
+.header__for__new {
   background-color: $mainWhiteColor;
   height: 48px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
-  .header__right{
+  .header__right {
     float: right;
     position: absolute;
     top: 10px;
     right: 10px;
 
-    .button__new{
+    .button__new {
       border: 1px solid #D9D9D9;
       border-radius: 4px;
       padding: 5px 10px;
@@ -20,34 +20,34 @@
       box-sizing: border-box;
       display: inline-block;
     }
-    .cancel_to_mypage{
+    .cancel_to_mypage {
       text-decoration: none;
       color: #000;
     }
   }
 }
-.note__input{
+.note__input {
   background-color: $mainWhiteColor;
   height: 666px;
   width: 100%;
 
-  .note__input__container{
+  &__container {
     width: 620px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 40px;
 
-    .note__input__picture{
+    .note__input__picture {
       height: 256px;
       width: 100%;
       text-align: center;
       background-color: #f7f9f9;
 
-      .picture__buttons{
+      .picture__buttons {
         padding-top: 50px;
         margin-bottom: 16px;
 
-        .picture__button{
+        .picture__button {
           display: block;
           background-color: #ffffff;
           border-radius: 4px;
@@ -60,19 +60,19 @@
           margin: 0 auto 8px auto;
           box-sizing: border-box;
 
-          .form__mask__image{
+          .form__mask__image {
             cursor: pointer;
 
-            .hidden{
+            .hidden {
               display: none;
             }
           }
         }
       }
-      .note__input__account{
+      .note__input__account {
         text-align: center;
 
-        .note__input__description{
+        .note__input__description {
           text-align: left;
           color: #787c7b;
           width: 340px;
@@ -80,26 +80,26 @@
         }
       }
     }
-    .note__input__text{
+    .note__input__text {
       margin-top: 72px;
 
-      .note__input__title{
+      .note__input__title {
 
-        .note__input__title__type{
+        &__type {
           width: 620px;
           height: 48px;
           font-size: 32px;
           border: none;
           outline: 0;
         }
-        .note__input__title__type::placeholder{
+        &__type::placeholder {
           color: #b3b3b1;
         }
       }
-      .note__input__content{
+      .note__input__content {
         margin-top: 30px;
 
-        .note__input__content__type{
+        &__type {
           width: 620px;
           height: 36px;
           border: none;
