@@ -1,8 +1,20 @@
 class ContributesController < ApplicationController
-  before_action :get_category
+
+  def new
+    @contribute = Contribute.new
+  end
+
+  def create
+    @contribute = current_user.contributes.build(contribute_params)
+    if @contribute.save
+      redirect_to new_contribute_path
+    else
+      render :index
+    end
+  end
 
   private
-  def get_category
-    @category= params[:action]
+  def contribute_params
+    params.require(:contribute).permit(:image, :title, :content)
   end
 end
