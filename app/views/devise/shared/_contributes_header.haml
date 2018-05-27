@@ -13,9 +13,31 @@
             = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_30_notification-8d3ad008212d7ab5372a8c6efae717fd0f273e6f19ac92781c8eb2a0b14850d8.svg", class: "notification__button"
           %li.inline
             = image_tag "#{current_user.image}", class: "user__image"
-          %li.inline.new
+          %li.inline.new__post__create
             = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_post_note-e3a56e1d96359d5dba3264135500b5970771e55cc60ceb5206f2de6d22532831.svg", class: "pen__button"
             %p.new__post ノートを投稿
+          %div.new__post__select
+            %ul.new__post__list
+              %li.inline.new__post__element
+                = link_to new_contribute_path, class: "new__post__icon" do
+                  = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_textnote-b0b4aea6984f7ec9a8f30a101f2dd230055c9951fb2795470d39cbb8583aa7ae.svg"
+                  %p.new__post__text テキスト
+              %li.inline.new__post__element
+                = link_to helps_path, class: "new__post__icon" do
+                  = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_imagenote-8b6c4491df4036b02bc4bd73d24b8e5751ac5a12813e53b93d18f08b95fdea85.svg"
+                  %p.new__post__text イメージ
+              %li.inline.new__post__element
+                = link_to helps_path, class: "new__post__icon" do
+                  = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_talknote-1d0d9a7b5bdea9ac6d13b497b5bcbf92dfb5ea29bcafa1536ccd29c5f9dfea76.svg"
+                  %p.new__post__text トーク
+              %li.inline.new__post__element
+                = link_to helps_path, class: "new__post__icon" do
+                  = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_soundnote-b4fd0f755b0cd8ee7e50e435b80f49620ef15e509c8422391679826890ba2120.svg"
+                  %p.new__post__text サウンド
+              %li.inline.new__post__element
+                = link_to helps_path, class: "new__post__icon" do
+                  = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_movienote-ffd3a9ecb162ca6f114edabf7e02876a41bc226f00a3c31a3d7bbbdfe46db898.svg"
+                  %p.new__post__text ムービー
         -else
           %li.inline
             = link_to "ログイン", new_user_session_path, class: "login__button"
