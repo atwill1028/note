@@ -13,7 +13,7 @@
   z-index: 2;
   position: fixed;
   width: 470px;
-  background-color: #fff;
+  background-color: $mainWhiteColor;
   top: 100px;
   left: 33%;
   box-sizing: border-box;
@@ -22,9 +22,9 @@
     font-size: 20px;
     padding: 15px 0;
     font-weight: bold;
-    background-color: #f8f9fa;
+    background-color: $backGreyColor;
     text-align: center;
-    border-bottom: 1px solid #e1e5e7;
+    border-bottom: 1px solid $borderColor;
   }
 
   &__content {
@@ -53,19 +53,19 @@
     .setting__tag__and__magazine {
       font-size: 12px;
       cursor: pointer;
-      background-color: #f8f9fa;
-      border: 1px solid #e1e5e7;
+      background-color: $backGreyColor;
+      border: 1px solid $borderColor;
       padding: 10px;
     }
     .setting__tag__and__magazine__open {
       display: none;
       font-size: 12px;
-      background-color: #f8f9fa;
+      background-color: $backGreyColor;
       padding: 10px;
-      border-top: 1px solid #e1e5e7;
-      border-bottom: 1px solid #e1e5e7;
-      border-left: 1px solid #e1e5e7;
-      border-right: 1px solid #e1e5e7;
+      border-top: 1px solid $borderColor;
+      border-bottom: 1px solid $borderColor;
+      border-left: 1px solid $borderColor;
+      border-right: 1px solid $borderColor;
       .tag__label {
         display: inline-block;
       }
@@ -76,8 +76,8 @@
       .magazine__new {
         margin-left: 25px;
         width: 330px;
-        background-color: #fff;
-        border: 1px solid #e1e5e7;
+        background-color: $mainWhiteColor;
+        border: 1px solid $borderColor;
         padding: 10px;
         box-sizing: border-box;
       }
@@ -102,8 +102,8 @@
     box-sizing: border-box;
     padding: 10px;
     height: 50px;
-    border-top: 1px solid #e1e5e7;
-    background-color: #f8f9fa;
+    border-top: 1px solid $borderColor;
+    background-color: $backGreyColor;
 
     .modal__cancel__button {
       font-size: 12px;
@@ -120,8 +120,8 @@
       float: right;
 
       .modal__submit {
-        background-color: #2cb696;
-        color: #fff;
+        background-color: $greyButtonColor;
+        color: $mainWhiteColor;
         text-align: center;
         line-height: 30px;
         font-size: 12px;
@@ -184,7 +184,7 @@
 
         .picture__button {
           display: block;
-          background-color: #ffffff;
+          background-color: $mainWhiteColor;
           border-radius: 4px;
           padding: 4px 16px 0px 16px;
           min-height: 30px;

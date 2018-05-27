@@ -1,110 +1,191 @@
-.header__container{
+.header__container {
+  padding-left: 100px;
   background-color: $mainWhiteColor;
-  .header__top{
+
+  .header__top {
     height: 64px;
     max-width: 940px;
     padding-left: 120px;
     padding-right: 120px;
     position: relative;
+
     .icon{
       @include height_center;
     }
-    &__right{
+    &__right {
       margin-left: 700px;
       width: 600px;
-      ul{
+
+      ul {
         position: relative;
         top: 12px;
-        .inline{
+
+        .inline {
           vertical-align: middle;
-          .login__button{
+
+          .login__button {
             text-decoration: none;
             font-size: 12px;
             color: #787c7b;
             padding-right: 16px;
             padding-left: 16px;
           }
-          .login__button:hover{
-            color: #222222;
+          .login__button:hover {
+            color: $blackColor;
           }
-          .regist__button{
+          .regist__button {
             font-size: 12px;
             text-decoration: none;
             color: $mainWhiteColor;
-            background-color: #2cb696;
+            background-color: $greyButtonColor;
             padding: 12px;
             border-radius: 4px;
           }
-          .search__button{
+          .notification__button {
+            cursor: pointer;
+            margin-left: 10px;
+          }
+          .search__button {
             width: 30px;
             height: 30px;
             margin-left: 5px;
             cursor: pointer;
           }
+          .user__image {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            border-radius: 30px;
+            cursor: pointer;
+          }
+        }
+        .new__post__create {
+          margin-left: 15px;
+          background-color: $greyButtonColor;
+          color: $mainWhiteColor;
+          border-radius: 3px;
+          padding: 3px;
+          cursor: pointer;
+
+          .pen__button {
+            vertical-align: middle;
+          }
+          .new__post {
+            display: inline-block;
+            font-size: 12px;
+          }
+        }
+        .new__post__select {
+          display: none;
+          margin-top: 10px;
+          width: 400px;
+          background-color: $mainWhiteColor;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.25), 0 0 1px rgba(0,0,0,0.35);
+          border-radius: 4px;
+          padding: 20px;
+
+          .new__post__list {
+
+            .new__post__element {
+              margin-left: 10px;
+
+              .new__post__icon {
+                text-decoration: none;
+
+                .new__post__text {
+                  text-align: center;
+                  color: #787c7b;
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+        .new__post__select:before {
+          content: "";
+          border: 12px solid transparent;
+          border-bottom: 12px solid rgba(0,0,0,0.25);
+          position: absolute;
+          bottom: 125px;
+          right: 70%;
+        }
+        .new__post__select:after {
+          content: "";
+          border: 12px solid transparent;
+          border-bottom: 12px solid $mainWhiteColor;
+          position: absolute;
+          bottom: 124px;
+          right: 70%;
         }
       }
     }
   }
-  .header__navigation{
+  .header__navigation {
     height: 48px;
     padding-left: 120px;
     display: table;
-    ul{
+
+    ul {
       display: table-cell;
       vertical-align: middle;
-      .navigation_menu{
+
+      .navigation_menu {
         padding: 17px 8px;
         font-size: 14px;
         text-decoration: none;
         color: #787c7b;
       }
-      .navigation_menu.selected{
-        color: #222222;
+      .navigation_menu.selected {
+        color: $blackColor;
         border-bottom: 1px solid black;
       }
-      .navigation_menu.not_selected:hover{
-        color: #222222;
+      .navigation_menu.not_selected:hover {
+        color: $blackColor;
         border-bottom: 1px solid black;
       }
       .question{
         margin-left: 515px;
-        .navigation_question{
+
+        .navigation_question {
           margin: 0 auto;
           padding: 17px 0px;
           color: #A8ABB1;
+
           .question-icon{
             padding-right: 8px;
             padding-left: 8px;
           }
         }
-        .navigation_question:hover{
-          color: #222222;
+        .navigation_question:hover {
+          color: $blackColor;
           border-bottom: 1px solid black;
         }
       }
     }
   }
-  .header__category{
+  .header__category {
     height: 54px;
     padding-left: 120px;
     display: table;
-    ul.inline{
+
+    ul.inline {
       width: 940px;
       border-top: 1px solid rgba(0,0,0,0.05);
       display: table-cell;
       vertical-align: middle;
-      .category_menu{
+
+      .category_menu {
         text-decoration: none;
         color: #787c7b;
         font-size: 14px;
         line-height: 21px;
         padding: 16px 14px;
       }
-      .category_menu:hover{
-        color: #222222;
+      .category_menu:hover {
+        color: $blackColor;
       }
-      .category_menu.selected{
-        color: #222222;
+      .category_menu.selected {
+        color: $blackColor;
       }
     }
   }

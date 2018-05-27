@@ -3,8 +3,7 @@ $(function(){
     if($("#contribute_title").val() == ""){
         alert("タイトルを入力してください。")
     }else{
-        $("#modal__overlay").toggle();
-        $(".modal__box").toggle();
+        modal__toggle();
     }
   });
 
@@ -14,11 +13,8 @@ $(function(){
           $("#contribute_price").val(100);
       }else{
           $(".price__decide").css("display", "none");
-          $(".modal__submit").css("pointer-events", "auto");
-          $(".modal__submit").css("color", "#fff")
-          $(".modal__submit").css("background-color", "#2cb696");
           $("#contribute_price").val(0);
-          $(".price__alert").css("display", "none");
+          modal__make__able();
       }
   });
 
@@ -29,21 +25,27 @@ $(function(){
         $(".modal__submit").css("background-color", "#f8f9fa");
         $(".price__alert").css("display", "block");
     }else{
-        $(".modal__submit").css("pointer-events", "auto");
-        $(".modal__submit").css("color", "#fff")
-        $(".modal__submit").css("background-color", "#2cb696");
-        $(".price__alert").css("display", "none");
+      modal__make__able();
     }
   });
 
   $(".modal__cancel__button").click(function(){
-    $("#modal__overlay").toggle();
-    $(".modal__box").toggle();
+    modal__toggle();
   });
 
   $(".setting__tag__and__magazine").click(function(){
     $(".setting__tag__and__magazine__open").toggle();
   })
+
+  function modal__make__able(){
+    $(".modal__submit").css("pointer-events", "auto");
+    $(".modal__submit").css("color", "#fff")
+    $(".modal__submit").css("background-color", "#2cb696");
+    $(".price__alert").css("display", "none");
+  }
+
+  function modal__toggle(){
+    $("#modal__overlay").toggle();
+    $(".modal__box").toggle();
+  }
 });
-
-

@@ -9,7 +9,7 @@
           %li.left
             %p.setting__text 販売設定
           %li.left
-            = radio_button(:price, :visit, 'free', {:checked => true})
+            = radio_button(:price, :visit, 'free', {checked: true})
           %li.left
             %p 無料
           %li.left
@@ -17,7 +17,7 @@
           %li.left
             %p 有料
           %li.left.price__decide
-            = f.number_field :price, value: 100
+            = f.number_field :price, value: 0
           %li.left.price__decide
             %p 円
       .setting__tag__and__magazine
