@@ -1,0 +1,13 @@
+@mixin height_center{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+.inline {
+  display: inline-block;
+}
+
+@mixin border_top {
+  border-top: 1px solid #e1e5e7;
+}

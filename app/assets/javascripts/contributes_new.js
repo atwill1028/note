@@ -37,6 +37,14 @@ $(function(){
     $(".setting__tag__and__magazine__open").toggle();
   })
 
+  $(".note__input__content__type"). keydown(function(e) {
+      if ((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13)) {
+        $(this).css("height", $(this).height()+30)
+      } else {
+          return true;
+      }
+  });
+
   function modal__make__able(){
     $(".modal__submit").css("pointer-events", "auto");
     $(".modal__submit").css("color", "#fff")
