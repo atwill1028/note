@@ -163,7 +163,7 @@
 }
 .note__input {
   background-color: $mainWhiteColor;
-  height: 666px;
+  min-height: 666px;
   width: 100%;
 
   &__container {
@@ -236,7 +236,7 @@
 
         &__type {
           width: 620px;
-          height: 36px;
+          min-height: 100px;
           border: none;
           outline: 0;
         }
