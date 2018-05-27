@@ -15,6 +15,6 @@ class ContributesController < ApplicationController
 
   private
   def contribute_params
-    params.require(:contribute).permit(:image, :title, :content)
+    params.require(:contribute).permit(:image, :title, :content, :price, :tag)
   end
 end

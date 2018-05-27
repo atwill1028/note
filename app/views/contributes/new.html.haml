@@ -1,4 +1,55 @@
 = form_for (@contribute) do |f|
+  #modal__overlay
+  .modal__box
+    .modal__box__header
+      公開設定
+    .modal__box__content
+      .setting__free__or__notfree
+        %ul
+          %li.left
+            %p.setting__text 販売設定
+          %li.left
+            = radio_button(:price, :visit, 'free', {checked: true})
+          %li.left
+            %p 無料
+          %li.left
+            = radio_button(:price, :visit, 'notfree')
+          %li.left
+            %p 有料
+          %li.left.price__decide
+            = f.number_field :price, value: 0
+          %li.left.price__decide
+            %p 円
+      .setting__tag__and__magazine
+        = fa_icon "caret-down"
+        %p.tag__and__magazine.inline 詳細設定（ハッシュタグ、マガジン）
+      .setting__tag__and__magazine__open
+        .tag
+          %p.tag__label ハッシュタグ
+          =  f.text_field :tag, placeholder: "ハッシュタグを追加する"
+          .suggest__tag
+            %p おすすめのタグ
+            %ul
+              %li.tag__ex #コラム
+              %li.tag__ex #エッセイ
+              %li.tag__ex #雑記
+              %li.tag__ex #興味
+              %li.tag__ex #万華鏡
+              %li.tag__ex #写真
+              %li.tag__ex #イラスト
+              %li.tag__ex #日記
+              %li.tag__ex #マンガ
+              %li.tag__ex #小説
+        .magazine
+          %p.inline マガジン
+          %p.inline.magazine__new + 新規マガジンの作成
+      %p.price__alert  販売価格は100円〜10,000円まで設定できます。
+    .modal__box__footer
+      %ul
+        %li.modal__cancel__button
+          キャンセル
+        %li.modal__submit__button
+          = f.submit "投稿", class: "modal__submit"
   .header__for__new
     -if user_signed_in?
       = link_to "note", user_path("#{current_user.id}"), class: "center_logo"
@@ -7,7 +58,7 @@
     .header__right
       %ul
         %li.inline
-          = f.submit "公開設定", class: "button__new"
+          %p.button__new.public__setting 公開設定
         %li.inline
           = link_to "キャンセル", user_path("#{current_user.id}"), class: "button__new cancel_to_mypage"
   .note__input
