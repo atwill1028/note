@@ -13,6 +13,10 @@ class ContributesController < ApplicationController
     end
   end
 
+  def index
+    @contributes = Contribute.all.includes(:user)
+  end
+
   private
   def contribute_params
     params.require(:contribute).permit(:image, :title, :content, :price, :tag)

@@ -1,46 +1,31 @@
-.header__container
-  .header__top
-    = link_to image_tag("https://d2l930y2yx77uc.cloudfront.net/assets/renewal/logo-6405eaba4abaa126590b18753faca863c49215765e99bbc54df5ad8ad059914e.svg"), contributes_path, class: "icon"
-    .header__top__right
-      %ul
-        %li.inline
-          = link_to "ログイン", new_user_session_path, class: "login__button"
-        %li.inline
-          = link_to "新規登録", new_user_registration_path, class: "regist__button"
-        %li.inline
-          = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_30_search-ecd6e84558c1939f3fcf34ada31bbbaac1228158c2b1fccc779c290affbe52ef.svg", class: "search__button"
-  .header__navigation
-    %ul
-      %li.inline
-        = link_to "おすすめ", contributes_path, class: "navigation_menu"
-      %li.inline
-        = link_to "ピックアップ", contributes_path, class: "navigation_menu"
-      %li.inline
-        = link_to "注目カテゴリ", contributes_path, class: "navigation_menu"
-      %li.inline
-        = link_to contributes_path, class: "navigation_menu" do
-          人気タグ
-          = fa_icon "caret-down", class: "navigation_menu"
-      %li.inline.question
-        = link_to contributes_path do
-          = fa_icon "question-circle", class: "fa-lg question"
-  .header__category
-    %ul.inline
-      %li.inline
-        = link_to "マンガ", contributes_path, class: "category_menu"
-      %li.inline
-        = link_to "コラム", contributes_path, class: "category_menu"
-      %li.inline
-        = link_to "小説", contributes_path, class: "category_menu"
-      %li.inline
-        = link_to "写真", contributes_path, class: "category_menu"
-      %li.inline
-        = link_to "サウンド", contributes_path, class: "category_menu"
-      %li.inline
-        = link_to "ビジネス", contributes_path, class: "category_menu"
-      %li.inline
-        = link_to "ライフスタイル", contributes_path, class: "category_menu"
-      %li.inline
-        = link_to "テクノロジー", contributes_path, class: "category_menu"
-      %li.inline
-        = link_to "エンタメ", contributes_path, class: "category_menu"
+= render "devise/shared/contributes_header"
+- @contributes.find_each do |contribute|
+  .each__contribute
+    .contribute__header
+      = image_tag "#{contribute.user.image}", class: "user__image"
+      %ul.inline
+        %li.user__nickname
+          = contribute.user.nickname
+        %li.contribute__created
+          = contribute.created_at.strftime("%Y/%m/%d %H:%M")
+    - if contribute.image?
+      .contribute__image
+        = image_tag "#{contribute.image}", width: "580"
+    .contribute__content
+      .title
+        = contribute.title
+      .contents
+        = simple_format("#{contribute.content}")
+      .tag
+    .contribute__footer
+      %ul.action
+        %li.like.inline
+          = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_like-e5e2cb37b6be87e7fe45d6228abf3d6252a73c69bf9f60dd63bf46843628a1d6.svg", class: "like__icon"
+        %li.like__count.inline
+          1
+        %li.share.inline
+          = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_30_share-80feb17a6dbd8c4db0a03c99ca26a9b4910cc3436d8c04d1d077c8db247de312.svg"
+        %li.magazine.inline
+          = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_30_add-magazine-316e72e8051af7a26332365583af0f1a5380e8f9b8f9d0e85cc7ea395fdc57c5.svg"
+        %li.comment.inline
+          コメントする
