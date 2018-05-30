@@ -1,5 +1,5 @@
 = render "devise/shared/contributes_header"
-- @contributes.find_each do |contribute|
+- @contributes.each do |contribute|
   .each__contribute
     .contribute__header
       = image_tag "#{contribute.user.image}", class: "user__image"
@@ -7,7 +7,7 @@
         %li.user__nickname
           = contribute.user.nickname
         %li.contribute__created
-          = contribute.created_at.strftime("%Y/%m/%d %H:%M")
+          = contribute.created_at.to_s
     - if contribute.image?
       .contribute__image
         = image_tag "#{contribute.image}", width: "580"
