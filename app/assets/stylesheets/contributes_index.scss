@@ -1,0 +1,79 @@
+.each__contribute {
+  background-color: #fff;
+  width: 580px;
+  max-height: 768px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 1px solid #e8eceb;
+
+  .contribute__header {
+    margin: 20px;
+
+    .user__image {
+      width: 36px;
+      height: 36px;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+    .inline {
+      .user__nickname {
+        color: $blackColor;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      .contribute__created {
+        color: $blackColor;
+        font-size: 11px;
+      }
+    }
+  }
+  .contribute__content {
+    margin: 20px;
+
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .contents {
+      font-size: 14px;
+    }
+  }
+
+  .contribute__footer {
+    border-top: 1px solid #e8eceb;
+    margin: 0 20px;
+    padding: 12px 0 15px 0;
+
+    .action {
+       height: 30px;
+      .like {
+        cursor: pointer;
+      }
+      .like__count {
+        cursor: pointer;
+        vertical-align: top;
+        height: 24px;
+        color: #787c7b;
+        padding: 5px 0 5px 5px;
+        font-size: 14px;
+        margin-right: 35px;
+      }
+      .share {
+        cursor: pointer;
+        margin-right: 35px;
+      }
+      .magazine {
+        cursor: pointer;
+      }
+      .comment {
+        cursor: pointer;
+        vertical-align: top;
+        height: 24px;
+        color: #787c7b;
+        margin-left: 249px;
+        font-size: 14px;
+        padding: 5px 0 5px 5px;
+      }
+    }
+  }
+}
