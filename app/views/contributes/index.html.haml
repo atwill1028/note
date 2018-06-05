@@ -10,15 +10,12 @@
           = contribute.created_at.to_s
     - if contribute.image?
       .contribute__image
-        = image_tag "#{contribute.image}", width: "580"
+        = image_tag contribute.image, width: "580"
     .contribute__content
       .title
         = contribute.title
       .contents
-        = simple_format("#{contribute.content}")
+        = simple_format(contribute.content)
       .tag
-    .contribute__footer{id: "#{contribute.id}"}
+    .contribute__footer{id: contribute.id}
       = render partial: "devise/shared/like", locals: { contribute: contribute, like: @likes.find_by(user_id: current_user.id, contribute_id: contribute.id) }
-
-
-
