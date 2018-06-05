@@ -1,2 +1,1 @@
-id = <%= @id %>;
-$("#"+id).html("<%= j(render partial: 'devise/shared/like', locals: { contribute: @contribute}) %>");
+$("#"+ <%= @contribute.id %>).html("<%= j(render partial: 'devise/shared/like', locals: { contribute: @contribute}) %>");
