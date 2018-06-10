@@ -11,12 +11,14 @@
         = link_to contribute_contribute_likes_path(contribute), method: :post, remote: true do
           = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_like-e5e2cb37b6be87e7fe45d6228abf3d6252a73c69bf9f60dd63bf46843628a1d6.svg", class: "like__icon"
       %li.like__count.inline
-        = contribute.likes_count
+        - if contribute.likes_count.to_i >= 1
+          = contribute.likes_count
   - else
     %li.like.inline
       = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_like-e5e2cb37b6be87e7fe45d6228abf3d6252a73c69bf9f60dd63bf46843628a1d6.svg", class: "like__icon"
     %li.like__count.inline
-      = contribute.likes_count
+      - if contribute.likes_count.to_i >=1
+        = contribute.likes_count
   %li.share.inline
     = image_tag "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_30_share-80feb17a6dbd8c4db0a03c99ca26a9b4910cc3436d8c04d1d077c8db247de312.svg"
   %li.magazine.inline
