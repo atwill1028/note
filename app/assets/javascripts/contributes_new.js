@@ -37,11 +37,20 @@ $(function(){
     $(".setting__tag__and__magazine__open").toggle();
   })
 
-  $(".note__input__content__type"). keydown(function(e) {
+  $(".note__input__title__type").keydown(function(e) {
+    if ((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13)) {
+      e.preventDefault();
+      $(".note__input__content__type").focus();
+    } else {
+      return true;
+    }
+  });
+
+  $(".note__input__content__type").keydown(function(e) {
       if ((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13)) {
         $(this).css("height", $(this).height()+30)
       } else {
-          return true;
+        return true;
       }
   });
 
