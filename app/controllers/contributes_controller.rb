@@ -14,8 +14,12 @@ class ContributesController < ApplicationController
   end
 
   def index
-    @contributes = Contribute.all.includes(:user)
+    @contributes = Contribute.all.includes(:user).order("created_at DESC")
     @likes = ContributeLike.all.includes(:user)
+  end
+
+  def show
+    @target_contribute = Contribute.find(params[:id])
   end
 
   private
