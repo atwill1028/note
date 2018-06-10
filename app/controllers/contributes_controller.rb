@@ -15,6 +15,7 @@ class ContributesController < ApplicationController
 
   def index
     @contributes = Contribute.all.includes(:user)
+    @likes = ContributeLike.all.includes(:user)
   end
 
   private
