@@ -10,12 +10,14 @@
           = contribute.created_at.to_s
     - if contribute.image?
       .contribute__image
-        = image_tag contribute.image, width: "580"
+        = link_to(image_tag(contribute.image, :width => "580"), contribute_path(contribute.id))
     .contribute__content
       .title
-        = contribute.title
+        = link_to(contribute.title, contribute_path(contribute.id), class: "title_link")
       .contents
-        = simple_format(contribute.content)
+        = truncate(simple_format(contribute.content), length: @content_max_length)
+      - if contribute.content.length.to_i >= @content_max_length
+        = link_to "もっとみる", contribute_path(contribute.id), class: "to_show"
       .tag
     .contribute__footer{id: contribute.id}
       = render partial: "devise/shared/like", locals: { contribute: contribute, like: @likes.find_by(user_id: current_user.id, contribute_id: contribute.id) }
