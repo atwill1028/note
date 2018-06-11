@@ -1,0 +1,45 @@
+.target {
+  background-color: $mainWhiteColor;
+  border-top: 1px solid rgba(0,0,0,0.15);
+
+  .target_contribute {
+    width: 580px;
+    margin: 0 auto;
+    padding-top: 40px;
+
+    .target_title {
+      margin-top: 30px;
+      margin-bottom: 18px;
+      font-size: 32px;
+      letter-spacing: 0.04em;
+    }
+    .target_user {
+
+      .user__image {
+        width: 36px;
+        height: 36px;
+        border-radius: 30px;
+        cursor: pointer;
+      }
+      .inline {
+
+        .user__nickname {
+          color: $blackColor;
+          font-size: 12px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+        .contribute__created {
+          color: $blackColor;
+          font-size: 11px;
+        }
+      }
+    }
+    .target_content {
+      margin-top: 36px;
+      padding-bottom: 36px;
+      font-size: 18px;
+      line-height: 36px;
+    }
+  }
+}

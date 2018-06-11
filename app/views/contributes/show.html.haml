@@ -1,0 +1,18 @@
+= render "devise/shared/contributes_only_header"
+.target
+  .target_contribute
+    -if @target_contribute.image?
+      .target_image
+        = image_tag "#{@target_contribute.image}", width: "580"
+    .target_title
+      = @target_contribute.title
+    .target_user
+      = image_tag "#{@target_contribute.user.image}", class: "user__image"
+      %ul.inline
+        %li.user__nickname
+          = @target_contribute.user.nickname
+        %li.contribute__created
+          = @target_contribute.created_at.to_s
+    .target_content
+      = simple_format(@target_contribute.content)
+
