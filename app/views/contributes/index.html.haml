@@ -10,7 +10,7 @@
           = contribute.created_at.to_s
     - if contribute.image?
       .contribute__image
-        = link_to(image_tag(contribute.image, class: "contribute_image_content"), contribute_path(contribute.id))
+        = link_to(image_tag(contribute.image, class: "contribute_image_content"), contribute_path(contribute))
     .contribute__content
       .title
         = link_to(contribute.title, contribute_path(contribute.id), class: "title_link")

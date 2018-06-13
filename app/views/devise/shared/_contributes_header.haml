@@ -1,7 +1,7 @@
 .header__container
   .header__top
     -if user_signed_in?
-      = link_to image_tag("note_logo"), user_path("#{current_user.id}"), class: "icon"
+      = link_to image_tag("note_logo"), user_path(current_user), class: "icon"
     -else
       = link_to image_tag("note_logo"), contributes_path, class: "icon"
     .header__top__right
@@ -16,7 +16,7 @@
           %li.inline.new__post__create
             = image_tag "pen_button", class: "pen__button"
             %p.new__post ノートを投稿
-          %div.new__post__select
+          .new__post__select
             %ul.new__post__list
               %li.inline.new__post__element
                 = link_to new_contribute_path, class: "new__post__icon" do
