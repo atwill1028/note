@@ -3,7 +3,7 @@
   .target_contribute
     -if @target_contribute.image?
       .target_image
-        = image_tag "#{@target_contribute.image}", width: "580"
+        = image_tag "#{@target_contribute.image}", class: "target_image_content"
     .target_title
       = @target_contribute.title
     .target_user
