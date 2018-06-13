@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root "contributes#index"
-  resources :contributes, only: [:index, :new, :create] do
+  resources :contributes, only: [:index, :new, :create, :show] do
     resources :contribute_likes, only: [:create, :destroy]
     collection do
       resources :mangas, only: :index

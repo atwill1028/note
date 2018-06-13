@@ -27,15 +27,30 @@
       }
     }
   }
+  .contribute_image_content {
+    width: 580px;
+  }
   .contribute__content {
     margin: 20px;
 
     .title {
       font-size: 20px;
       font-weight: bold;
+
+      .title_link {
+        text-decoration: none;
+        color: $blackColor;
+      }
     }
     .contents {
       font-size: 14px;
+      max-height: 400px;
+    }
+
+    .to_show {
+      text-decoration: none;
+      color: $greenTextColor;
+      font-size: 12px;
     }
   }
 
