@@ -1,0 +1,31 @@
+%li.inline
+  = image_tag "search_button", class: "search__button"
+%li.inline
+  = image_tag "notification_button", class: "notification__button"
+%li.inline
+  = image_tag "#{current_user.image}", class: "user__image"
+%li.inline.new__post__create
+  = image_tag "pen_button", class: "pen__button"
+  %p.new__post ノートを投稿
+.new__post__select
+  %ul.new__post__list
+    %li.inline.new__post__element
+      = link_to new_contribute_path, class: "new__post__icon" do
+        = image_tag "make_text"
+        %p.new__post__text テキスト
+    %li.inline.new__post__element
+      = link_to helps_path, class: "new__post__icon" do
+        = image_tag "make_image"
+        %p.new__post__text イメージ
+    %li.inline.new__post__element
+      = link_to helps_path, class: "new__post__icon" do
+        = image_tag "make_talk"
+        %p.new__post__text トーク
+    %li.inline.new__post__element
+      = link_to helps_path, class: "new__post__icon" do
+        = image_tag "make_sound"
+        %p.new__post__text サウンド
+    %li.inline.new__post__element
+      = link_to helps_path, class: "new__post__icon" do
+        = image_tag "make_movie"
+        %p.new__post__text ムービー
