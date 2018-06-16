@@ -15,4 +15,31 @@
           = @target_contribute.created_at.to_s
     .target_content
       = simple_format(@target_contribute.content)
-
+  .recommended_contributes
+    .recommended_contributes_index このクリエイターのおすすめノート
+    - @recommended_contributes.each do |contribute|
+      .recommended_contribute
+        .left_part
+          .left_part_top
+            = link_to(contribute.title, contribute_path(contribute.id), class: "title_link")
+          .left_part_bottom
+            .likes_count.inline
+              = image_tag "mini_like_icon", class: "mini_like_icon"
+              = contribute.likes_count
+            .user_nickname.inline
+              = contribute.user.nickname
+        .right_part
+          = link_to(image_tag(contribute.image, class: "contribute_image_content"), contribute_path(contribute))
+    -if @before_contribute || @next_contribute
+      .recommended_before_next
+        -if @before_contribute
+          .recommended_before.inline
+            = link_to contribute_path(@before_contribute), class: "before" do
+              = fa_icon "angle-left", class: "angle"
+              = @before_contribute.title
+        .center_border.inline
+        -if @next_contribute
+          .recommended_next.inline
+            = link_to contribute_path(@next_contribute), class: "next" do
+              = @next_contribute.title
+              = fa_icon "angle-right", class: "angle"
