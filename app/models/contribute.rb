@@ -8,7 +8,7 @@ class Contribute < ApplicationRecord
   end
 
   def before_contribute
-    Contribute.order("created_at DESC").where("created_at <= ? and id <?",created_at, id).first
+    Contribute.order("created_at DESC").find_by("created_at <= ? and id <?",created_at, id)
   end
 
   def next_contribute
