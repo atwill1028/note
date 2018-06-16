@@ -21,6 +21,9 @@ class ContributesController < ApplicationController
 
   def show
     @target_contribute = Contribute.find(params[:id])
+    @recommended_contributes = @target_contribute.user.contributes.order("likes_count DESC, id DESC").where.not(id:params[:id]).limit(3)
+    @before_contribute = @target_contribute.before_contribute
+    @next_contribute = @target_contribute.next_contribute
   end
 
   private
