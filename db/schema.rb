@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180610082416) do
+ActiveRecord::Schema.define(version: 20180623030902) do
 
   create_table "comment_likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
@@ -40,6 +40,12 @@ ActiveRecord::Schema.define(version: 20180610082416) do
     t.index ["user_id"], name: "index_contribute_likes_on_user_id", using: :btree
   end
 
+  create_table "contribute_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "contributes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image"
     t.text     "content",     limit: 4294967295
@@ -47,10 +53,18 @@ ActiveRecord::Schema.define(version: 20180610082416) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "title"
-    t.string   "tag"
     t.integer  "price"
     t.integer  "likes_count"
     t.index ["user_id"], name: "index_contributes_on_user_id", using: :btree
+  end
+
+  create_table "contributes_to_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "contribute_id"
+    t.integer  "contribute_tag_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["contribute_id"], name: "index_contributes_to_tags_on_contribute_id", using: :btree
+    t.index ["contribute_tag_id"], name: "index_contributes_to_tags_on_contribute_tag_id", using: :btree
   end
 
   create_table "follows", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -93,5 +107,7 @@ ActiveRecord::Schema.define(version: 20180610082416) do
   add_foreign_key "contribute_likes", "contributes"
   add_foreign_key "contribute_likes", "users"
   add_foreign_key "contributes", "users"
+  add_foreign_key "contributes_to_tags", "contribute_tags"
+  add_foreign_key "contributes_to_tags", "contributes"
   add_foreign_key "follows", "users"
 end
