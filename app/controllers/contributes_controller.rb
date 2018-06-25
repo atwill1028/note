@@ -7,9 +7,8 @@ class ContributesController < ApplicationController
 
   def create
     @contribute = current_user.contributes.build(contribute_params)
-    tag_params[:name].split(",").each do |tag|
-      one_tag = {"name"=> "#{tag}"}
-      one_tag = @contribute.contribute_tags.build(one_tag)
+    tag_params[:name].split(",").each do |tag_param|
+      one_tag = @contribute.contribute_tags.build(name: "#{tag_param}")
       one_tag.save
     end
     if @contribute.save
