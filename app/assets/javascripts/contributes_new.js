@@ -73,6 +73,16 @@ $(function(){
   $(document).on("click",".cancel_tag", function(){
     $(this).parent(".one_tag").remove();
   });
+
+  $(".modal__submit").on('click', function(e){
+    var tags = []
+    $(".one_tag").each(function(i,val){
+      var one_tag = $(val).text().slice(1).slice(0,-1);
+      tags.push(one_tag);
+    })
+    $("#contribute_tag_name").val(tags);
+  });
+
   function modal__make__able(){
     $(".modal__submit").css("pointer-events", "auto");
     $(".modal__submit").css("color", "#fff")
