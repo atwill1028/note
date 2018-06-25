@@ -26,7 +26,11 @@
       .setting__tag__and__magazine__open
         .tag
           %p.tag__label ハッシュタグ
-          =  f.text_field :tag, placeholder: "ハッシュタグを追加する"
+          .tags
+            = fields_for (@tag) do |t|
+              %ul.tag_list.inline
+              = t.hidden_field :name
+              %input#contribute_tag_make
           .suggest__tag
             %p おすすめのタグ
             %ul
