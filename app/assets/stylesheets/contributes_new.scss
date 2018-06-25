@@ -69,6 +69,32 @@
       .tag__label {
         display: inline-block;
       }
+      .tags {
+        border: 1px solid #e1e5e7;
+        background-color: $mainWhiteColor;
+
+        .tag_list {
+
+          .one_tag {
+           border: 1px solid #e1e5e7;
+           color: #a1a6a9;
+           font-size: 13px;
+           padding: 0 5px 0 5px;
+           margin: 4px;
+         }
+         .cancel_tag {
+          margin-left: 5px;
+          cursor: pointer;
+         }
+        }
+        #contribute_tag_make {
+          border: none;
+          outline: none;
+          width: 328px;
+          height: 30px;
+        }
+      }
+
       .tag__ex {
         display: inline-block;
         color: #41C9B4;
