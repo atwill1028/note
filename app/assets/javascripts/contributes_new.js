@@ -54,6 +54,22 @@ $(function(){
       }
   });
 
+  $("#contribute_tag_make").keydown(function(e) {
+    contribute_tag_val = $("#contribute_tag_make").val();
+    if ((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13)) {
+      e.preventDefault();
+      if (contribute_tag_val != "") {
+        $(".tag_list").append('<li class= "one_tag inline">'+"#"+contribute_tag_val+'<a class= "cancel_tag ">'+"×"+'</a>'+'</li>');
+        $("#contribute_tag_make").val("");
+      }
+    }
+    if (contribute_tag_val == "") {
+      if ((e.which && e.which === 8) || (e.keyCode && e.keyCode === 8)) {
+        $(".one_tag").filter(":last").remove();
+      }
+    }
+  });
+
   $(document).on("click",".cancel_tag", function(){
     $(this).parent(".one_tag").remove();
   });
