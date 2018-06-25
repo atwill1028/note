@@ -54,6 +54,9 @@ $(function(){
       }
   });
 
+  $(document).on("click",".cancel_tag", function(){
+    $(this).parent(".one_tag").remove();
+  });
   function modal__make__able(){
     $(".modal__submit").css("pointer-events", "auto");
     $(".modal__submit").css("color", "#fff")
