@@ -2,10 +2,16 @@ class ContributesController < ApplicationController
 
   def new
     @contribute = Contribute.new
+    @tag = ContributeTag.new
   end
 
   def create
     @contribute = current_user.contributes.build(contribute_params)
+    tag_params[:name].split(",").each do |tag|
+      one_tag = {"name"=> "#{tag}"}
+      one_tag = @contribute.contribute_tags.build(one_tag)
+      one_tag.save
+    end
     if @contribute.save
       redirect_to new_contribute_path
     else
@@ -29,6 +35,10 @@ class ContributesController < ApplicationController
 
   private
   def contribute_params
-    params.require(:contribute).permit(:image, :title, :content, :price, :tag)
+    params.require(:contribute).permit(:image, :title, :content, :price)
+  end
+
+  def tag_params
+    params.require(:contribute_tag)
   end
 end
