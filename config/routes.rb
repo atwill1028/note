@@ -15,9 +15,9 @@ Rails.application.routes.draw do
       resources :entertainments, only: :index
       resources :pickups, only: :index
       resources :categories, only: :index
-      resources :hashtags, only: :index
       resources :helps, only: :index
     end
   end
+  resources :hashtags, param: :hashtag, path: '/', only: [:index, :show]
   resources :users, only: [:index, :show]
 end
