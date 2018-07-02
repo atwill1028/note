@@ -55,10 +55,25 @@ $(function(){
   });
 
   $("#contribute_tag_make").keydown(function(e) {
-    contribute_tag_val = $("#contribute_tag_make").val();
+    var contribute_tag_val = $("#contribute_tag_make").val();
+    var taboo_sharp = "#";
+    var taboo_x = "×";
+    var normal_color = "black";
+    var alert_color = "red";
+    var repeated_character_flag = 0;
+    $("#contribute_tag_make").css("color", normal_color);
     if ((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13)) {
       e.preventDefault();
-      if (contribute_tag_val != "") {
+      $(".one_tag").each(function(i,val){
+        var one_tag = $(val).text().slice(1).slice(0,-1);
+        if (contribute_tag_val == one_tag) {
+          $("#contribute_tag_make").css("color", alert_color);
+          repeated_character_flag = 1;
+        }
+      })
+      if (contribute_tag_val.match(taboo_sharp)||contribute_tag_val.match(taboo_x)) {
+        $("#contribute_tag_make").css("color", alert_color);
+      }else if (contribute_tag_val != "" && repeated_character_flag == 0) {
         $(".tag_list").append('<li class= "one_tag inline">'+"#"+contribute_tag_val+'<a class= "cancel_tag ">'+"×"+'</a>'+'</li>');
         $("#contribute_tag_make").val("");
       }
