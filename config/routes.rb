@@ -18,6 +18,6 @@ Rails.application.routes.draw do
       resources :helps, only: :index
     end
   end
-  resources :hashtags, param: :hashtag, path: '/', only: [:index, :show]
+  resources :hashtags, param: :hashtag, path: '/', only: :show
   resources :users, only: [:index, :show]
 end
