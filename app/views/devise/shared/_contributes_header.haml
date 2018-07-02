@@ -19,7 +19,7 @@
       %li.inline
         = link_to "注目カテゴリ", categories_path, {:class => "#{(@category == 'categories')? 'navigation_menu selected' : 'navigation_menu not_selected'}"}
       %li.inline
-        = link_to hashtags_path, {:class => "#{(@category == 'hashtags')? 'navigation_menu selected' : 'navigation_menu not_selected'}"} do
+        = link_to hashtags_path, {:class => "#{(@category == 'hashtags')? 'navigation_menu selected' : 'navigation_menu not_selected'}", :id => "hashtags"} do
           人気タグ
           = fa_icon "caret-down", class: "navigation_menu"
       %li.inline.question
@@ -45,3 +45,24 @@
         = link_to "テクノロジー", techs_path, {:class => "#{(@category == 'techs')? 'category_menu selected' : 'category_menu'}"}
       %li.inline
         = link_to "エンタメ", entertainments_path, {:class => "#{(@category == 'entertainments')? 'category_menu selected' : 'category_menu'}"}
+    %ul.inline.hide#hashtag
+      %li.inline
+        = link_to "#現代史", hashtag_path(:hashtag => "現代史"), class: "category_menu"
+      %li.inline
+        = link_to "#ジャズ", hashtag_path(:hashtag => "ジャズ"), class: "category_menu"
+      %li.inline
+        = link_to "#ネットラジオ", hashtag_path(:hashtag => "ネットラジオ"), class: "category_menu"
+      %li.inline
+        = link_to "#恋愛", hashtag_path(:hashtag => "恋愛"), class: "category_menu"
+      %li.inline
+        = link_to "#文学", hashtag_path(:hashtag => "文学"), class: "category_menu"
+      %li.inline
+        = link_to "#アクセサリー通販", hashtag_path(:hashtag => "アクセサリー通販"), class: "category_menu"
+      %li.inline
+        = link_to "#俳句", hashtag_path(:hashtag => "俳句"), class: "category_menu"
+      %li.inline
+        = link_to "#散歩", hashtag_path(:hashtag => "散歩"), class: "category_menu"
+      %li.inline
+        = link_to "#note弁当部", hashtag_path(:hashtag => "note弁当部"), class: "category_menu"
+      %li.inline
+        = link_to "#独り言", hashtag_path(:hashtag => "独り言"), class: "category_menu"
