@@ -1,0 +1,21 @@
+.hashtag__list {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  width: 580px;
+
+  .hashtag__title {
+    margin-bottom: 24px;
+    .hashtag__name {
+      font-size: 30px;
+      font-weight: bold;
+      width: 493px;
+    }
+    .hashtag__posts__number {
+      color: #777;
+      width: 80px;
+      text-align: right;
+    }
+  }
+}
