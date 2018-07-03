@@ -1,2 +1,2 @@
 = render "devise/shared/contributes_header"
-= render partial: "devise/shared/contributes_list", locals: {contributes: @contributes}
+= render partial: "devise/shared/contributes_list", collection: @contributes, as: "contribute"

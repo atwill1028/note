@@ -7,4 +7,4 @@
       = "#{@contained_hashtag_contributes_count}" + "件"
   .hashtag__related__title
     関連タグ
-= render partial: "devise/shared/contributes_list", locals: {contributes: @contained_hashtag_contributes}
+= render partial: "devise/shared/contributes_list", collection: @contained_hashtag_contributes, as: "contribute"
