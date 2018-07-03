@@ -17,7 +17,7 @@
       = simple_format(@target_contribute.content)
     .target_hashtags
       - @target_contribute.contribute_tags.each do |target_tag|
-        = link_to("#" + target_tag.name, hashtag_path(:hashtag => target_tag.name), class: "target_tag")
+        = link_to("#" + target_tag.name, hashtag_path(hashtag: target_tag.name), class: "target_tag")
   .recommended_contributes
     .recommended_contributes_index このクリエイターのおすすめノート
     - @recommended_contributes.each do |contribute|
