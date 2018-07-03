@@ -1,0 +1,10 @@
+= render "devise/shared/contributes_header"
+.hashtag__list
+  .hashtag__title
+    .hashtag__name.inline
+      = "#"+"#{@hashtag}"
+    .hashtag__posts__number.inline
+      = "#{@contained_hashtag_contributes_count}" + "件"
+  .hashtag__related__title
+    関連タグ
+= render partial: "devise/shared/contributes_list", collection: @contained_hashtag_contributes, as: "contribute"

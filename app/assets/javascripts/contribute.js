@@ -26,4 +26,15 @@ $(function(){
   $(".new__post__create").click(function(){
     $(".new__post__select").toggle();
   })
+
+  $("#hashtags, #hashtag").hover(
+  function () {
+    $(".header__category ul:first").addClass("hide");
+    $(".header__category ul:nth-child(2)").removeClass("hide")
+  },
+  function () {
+    $(".header__category ul:first").removeClass("hide");
+    $(".header__category ul:nth-child(2)").addClass("hide")
+  }
+);
 });

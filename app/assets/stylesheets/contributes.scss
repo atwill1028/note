@@ -167,6 +167,9 @@
     padding-left: 120px;
     display: table;
 
+    ul.inline.hide {
+      display: none;
+    }
     ul.inline {
       width: 940px;
       border-top: 1px solid rgba(0,0,0,0.05);

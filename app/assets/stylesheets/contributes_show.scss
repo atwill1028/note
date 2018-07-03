@@ -47,6 +47,19 @@
       font-size: 18px;
       line-height: 36px;
     }
+
+    .target_hashtags {
+      margin-bottom: 30px;
+
+      .target_tag {
+        text-decoration: none;
+        color: #898D8C;
+        font-size: 12px;
+        padding: 5px 8px;
+        border-radius: 4px;
+        background-color: $backgroundGrey;
+      }
+    }
   }
   .recommended_contributes {
     width: 580px;

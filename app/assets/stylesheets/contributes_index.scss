@@ -46,7 +46,15 @@
       font-size: 14px;
       max-height: 400px;
     }
+    .tag {
+      margin-top: 15px;
 
+      .contribute_tag {
+        color: $greenTextColor;
+        text-decoration: none;
+        font-size: 12px;
+      }
+    }
     .to_show {
       text-decoration: none;
       color: $greenTextColor;
