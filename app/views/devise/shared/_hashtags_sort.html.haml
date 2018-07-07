@@ -1,0 +1,21 @@
+.hashtag__list
+  .hashtag__title
+    .hashtag__name.inline
+      = "#"+"#{@hashtag}"
+    .hashtag__posts__number.inline
+      = "#{@contained_hashtag_contributes_count}" + "件"
+  .hashtag__related__title
+    関連タグ
+  .hashtag__sort__types
+    %ul.sort__buttons.inline
+      -if @sort_type == "new"
+        %li.new__sort.selected
+          = link_to("新着" , hashtag_path(hashtag: "#{@hashtag}"), class: "sort__type")
+        %li.popular__sort
+          = link_to("人気" , popular_hashtags_path(hashtag: "#{@hashtag}"), class: "sort__type")
+      -else
+        %li.new__sort
+          = link_to("新着" , hashtag_path(hashtag: "#{@hashtag}"), class: "sort__type")
+        %li.popular__sort.selected
+          = link_to("人気" , popular_hashtags_path(hashtag: "#{@hashtag}"), class: "sort__type")
+= render partial: "devise/shared/contributes_list", collection: @contained_hashtag_contributes, as: "contribute"
