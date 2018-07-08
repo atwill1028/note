@@ -46,3 +46,9 @@
             = link_to contribute_path(@next_contribute), class: "next" do
               = @next_contribute.title
               = fa_icon "angle-right", class: "angle"
+  .comments
+    .comments__container
+      = image_tag current_user.image, class: "user__image"
+      = form_for (@comment),:url => {:action => :show} do |f|
+        = f.text_field :content, class: "note__input__title__type", placeholder: "コメントする..."
+
