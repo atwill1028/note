@@ -1,6 +1,6 @@
 class ContributesController < ApplicationController
-  $LIKES = ContributeLike.all.includes(:user)
-  $CONTENT_MAX_LENGTH = 200
+  LIKES = ContributeLike.all.includes(:user)
+  CONTENT_MAX_LENGTH = 200
 
   def new
     @contribute = Contribute.new
