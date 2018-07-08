@@ -13,11 +13,11 @@
     .title
       = link_to(contribute.title, contribute_path(contribute.id), class: "title_link")
     .contents
-      = truncate(simple_format(contribute.content), length: @content_max_length)
-    - if contribute.content.length.to_i >= @content_max_length
+      = truncate(simple_format(contribute.content), length: ContributesController::CONTENT_MAX_LENGTH)
+    - if contribute.content.length.to_i >= ContributesController::CONTENT_MAX_LENGTH
       = link_to "もっとみる", contribute_path(contribute.id), class: "to_show"
     .tag
       - contribute.contribute_tags.each do |contribute_tag|
         = link_to("#" + contribute_tag.name, hashtag_path(hashtag: contribute_tag.name), class: "contribute_tag")
   .contribute__footer{id: contribute.id}
-    = render partial: "devise/shared/like", locals: { contribute: contribute, like: @likes.find_by(user_id: current_user.id, contribute_id: contribute.id) }
+    = render partial: "devise/shared/like", locals: { contribute: contribute, like: ContributesController::LIKES.find_by(user_id: current_user.id, contribute_id: contribute.id) }

@@ -19,6 +19,10 @@ Rails.application.routes.draw do
       resources :helps, only: :index
     end
   end
-  resources :hashtags, param: :hashtag, path: '/', only: :show
+  resources :hashtags, param: :hashtag, path: '/', only: :show do
+    collection do
+      get 'popular'
+    end
+  end
   resources :users, only: [:index, :show]
 end

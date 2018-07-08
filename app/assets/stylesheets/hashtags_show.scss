@@ -1,3 +1,4 @@
+@import "mixin/_border";
 .hashtag__list {
   margin-left: auto;
   margin-right: auto;
@@ -16,6 +17,42 @@
       color: #777;
       width: 80px;
       text-align: right;
+    }
+  }
+  .hashtag__sort__types {
+    margin-top: 10px;
+    .sort__buttons {
+      border: 1px solid #D9D9D9;
+      border-radius: 5px;
+
+      .new__sort,.popular__sort{
+        width: 62px;
+        padding-right: 16px;
+        padding-left: 16px;
+        box-sizing: border-box;
+        font-size: 14px;
+        color: #787c7b;
+        float: left;
+        cursor: pointer;
+
+        .sort__type {
+          text-decoration: none;
+          color: #787c7b;
+        }
+      }
+      .new__sort {
+        @include border-right
+      }
+      .selected {
+        background-color: #e6e6e6;
+        cursor: default;
+
+        .sort__type {
+          text-decoration: none;
+          pointer-events: none;
+          color: $blackColor;
+        }
+      }
     }
   }
 }
