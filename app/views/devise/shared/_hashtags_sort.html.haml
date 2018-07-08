@@ -8,7 +8,7 @@
     関連タグ
   .hashtag__sort__types
     %ul.sort__buttons.inline
-      -if @sort_type == "new"
+      -if controller.action_name == "show"
         %li.new__sort.selected
           = link_to("新着" , hashtag_path(hashtag: "#{@hashtag}"), class: "sort__type")
         %li.popular__sort
