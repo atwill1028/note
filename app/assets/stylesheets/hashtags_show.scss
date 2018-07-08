@@ -1,3 +1,4 @@
+@import "mixin/_border";
 .hashtag__list {
   margin-left: auto;
   margin-right: auto;
@@ -40,7 +41,7 @@
         }
       }
       .new__sort {
-        border-right: 1px solid #D9D9D9;
+        @include border-right
       }
       .selected {
         background-color: #e6e6e6;
