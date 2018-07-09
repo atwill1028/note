@@ -143,6 +143,30 @@
       margin: 0 auto;
       padding-top: 24px;
       padding-bottom: 24px;
+
+      #comment_content {
+        margin-left: 10px;
+        position: relative;
+        bottom: 10px;
+        display: inline-block;
+        width: 500px;
+        height: 35px;
+        line-height: 35px;
+        color: #444444;
+        border: none;
+        outline: none;
+      }
+      #comment_submit {
+        opacity: 0;
+        margin-left: 450px;
+        font-size: 12px;
+        height: 32px;
+        width: 100px;
+        pointer-events: none;
+        background-color: $buttonGreen;
+        color: $mainWhiteColor;
+        border-radius: 5px;
+      }
     }
   }
   .user__image {
