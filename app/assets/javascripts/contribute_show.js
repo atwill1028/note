@@ -32,6 +32,7 @@ $(function(){
     var content = $(this).val();
     comment_opacity(content, 0.5);
   });
+
   $("#comment_content").keydown(function(e){
     if ((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13)) {
       e.preventDefault();
