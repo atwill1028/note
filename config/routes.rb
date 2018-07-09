@@ -17,7 +17,6 @@ Rails.application.routes.draw do
       resources :categories, only: :index
       resources :hashtags, only: :index
       resources :helps, only: :index
-      post 'comment'
     end
   end
   resources :hashtags, param: :hashtag, path: '/', only: :show do
@@ -26,4 +25,5 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:index, :show]
+  resources :comments, only: :create
 end
