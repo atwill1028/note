@@ -32,12 +32,7 @@ class ContributesController < ApplicationController
     @next_contribute = @target_contribute.next_contribute
     @comment = Comment.new
     @target_comments = @target_contribute.comments
-  end
-
-  def comment
-    @new_comment = Comment.new(content: comment_params[:content], contribute_id: comment_params[:contribute_id], user_id: current_user.id)
-    @new_comment.save
-    redirect_to contributes_path
+    @target_comments_count = @target_comments.count
   end
 
   private
@@ -47,9 +42,5 @@ class ContributesController < ApplicationController
 
   def tag_params
     params.require(:contribute_tag)
-  end
-
-  def comment_params
-    params.require(:comment).permit(:content, :contribute_id)
   end
 end
