@@ -46,3 +46,11 @@
             = link_to contribute_path(@next_contribute), class: "next" do
               = @next_contribute.title
               = fa_icon "angle-right", class: "angle"
+  .comments
+    = form_for (@comment) do |f|
+      .comments__container
+        = image_tag current_user.image, class: "user__image"
+        = f.text_field :content, class: "comment_input", placeholder: "コメントする..."
+        = f.hidden_field :contribute_id, value: "#{@target_contribute.id}"
+        = f.submit "送信", id: "comment_submit"
+

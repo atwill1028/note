@@ -21,12 +21,6 @@
     }
     .target_user {
 
-      .user__image {
-        width: 36px;
-        height: 36px;
-        border-radius: 30px;
-        cursor: pointer;
-      }
       .inline {
 
         .user__nickname {
@@ -139,5 +133,46 @@
         text-align: right;
       }
     }
+  }
+  .comments {
+    border-top: solid 1px #e6e6e6;
+    margin-top: 10px;
+
+    .comments__container {
+      width: 580px;
+      margin: 0 auto;
+      padding-top: 24px;
+      padding-bottom: 24px;
+
+      #comment_content {
+        margin-left: 10px;
+        position: relative;
+        bottom: 10px;
+        display: inline-block;
+        width: 500px;
+        height: 35px;
+        line-height: 35px;
+        color: #444444;
+        border: none;
+        outline: none;
+      }
+      #comment_submit {
+        opacity: 0;
+        margin-left: 450px;
+        font-size: 12px;
+        height: 32px;
+        width: 100px;
+        pointer-events: none;
+        background-color: $buttonGreen;
+        color: $mainWhiteColor;
+        border-radius: 5px;
+      }
+    }
+  }
+  .user__image {
+    width: 36px;
+    height: 36px;
+    border-radius: 30px;
+    cursor: pointer;
   }
 }

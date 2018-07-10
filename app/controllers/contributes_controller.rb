@@ -30,6 +30,9 @@ class ContributesController < ApplicationController
     @recommended_contributes = @target_contribute.user.contributes.order("likes_count DESC, id DESC").where.not(id:params[:id]).limit(@recommended_contributes_number)
     @before_contribute = @target_contribute.before_contribute
     @next_contribute = @target_contribute.next_contribute
+    @comment = Comment.new
+    @target_comments = @target_contribute.comments
+    @target_comments_count = @target_comments.count
   end
 
   private
