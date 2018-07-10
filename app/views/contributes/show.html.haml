@@ -47,7 +47,7 @@
               = @next_contribute.title
               = fa_icon "angle-right", class: "angle"
   .comments
-    = form_for (@comment),:url => {:action => :comment} do |f|
+    = form_for (@comment) do |f|
       .comments__container
         = image_tag current_user.image, class: "user__image"
         = f.text_field :content, class: "comment_input", placeholder: "コメントする..."
