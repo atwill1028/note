@@ -1,0 +1,11 @@
+.each__comment
+  .comment__header
+    = image_tag "#{comment.user.image}", class: "user__image"
+    %ul.inline
+      %li.user__nickname
+        = comment.user.nickname
+      %li.comment__created
+        = comment.created_at.to_s
+  .comment__content
+    .contents
+      = truncate(simple_format(comment.content), length: ContributesController::CONTENT_MAX_LENGTH)
