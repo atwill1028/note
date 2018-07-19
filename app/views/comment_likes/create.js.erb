@@ -1,0 +1,2 @@
+$("#"+ <%= @comment.id %>).html("<%= j(render partial: 'devise/shared/comment_like', locals: { comment: @comment, like: @like}) %>");
+
