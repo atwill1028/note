@@ -13,7 +13,6 @@ $(function(){
   });
 
   $(".notification__button").click(function(){
-    console.log("aaa");
     if ($(this).hasClass("active")) {
     $(this).removeClass("active");
     $(this).attr("src", "https://d2l930y2yx77uc.cloudfront.net/assets/renewal/icon_30_notification-8d3ad008212d7ab5372a8c6efae717fd0f273e6f19ac92781c8eb2a0b14850d8.svg");
