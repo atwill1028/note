@@ -24,5 +24,8 @@
   %li.magazine.inline
     = image_tag "magazine_button"
   %li.comment.inline
-    コメントする
+    -if contribute.comments.count >= 1
+      = link_to("コメント#{contribute.comments.count}件", contribute_path(contribute.id, scroll: "comment"), class: "comment_link")
+    -else
+      = link_to("コメントする", contribute_path(contribute.id, scroll: "comment"), class: "comment_link")
 
