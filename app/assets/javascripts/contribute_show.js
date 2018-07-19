@@ -1,4 +1,11 @@
 $(function(){
+  var url = location.href ;
+  var comment_position = $(document).height();
+  var scroll_speed = 100
+  if(url.match("scroll=comment")){
+    $("html,body").animate({ scrollTop: comment_position }, scroll_speed);
+  }
+
   $(".target_tag").hover(
     function () {
       $(this).css("background-color", "silver");
