@@ -46,7 +46,13 @@
             = link_to contribute_path(@next_contribute), class: "next" do
               = @next_contribute.title
               = fa_icon "angle-right", class: "angle"
+
   .comments
+    .comments__list
+      -if @target_comments_count
+        .comments__count
+          コメント#{@target_comments_count}件
+      = render partial: "devise/shared/comments_list", collection: @target_comments, as: "comment"
     = form_for (@comment) do |f|
       .comments__container
         = image_tag current_user.image, class: "user__image"
