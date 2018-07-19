@@ -49,7 +49,7 @@
 
   .comments
     .comments__list
-      -if @target_comments_count
+      -if @target_comments_count > 0
         .comments__count
           コメント#{@target_comments_count}件
       = render partial: "devise/shared/comments_list", collection: @target_comments, as: "comment"
