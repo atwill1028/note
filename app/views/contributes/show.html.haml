@@ -49,11 +49,11 @@
 
   .comments
     .comments__list
-      -if @target_comments_count > 0
-        .comments__count
-          コメント#{@target_comments_count}件
-      = render partial: "devise/shared/comments_list", collection: @target_comments, as: "comment"
-    = form_for (@comment) do |f|
+      .comments__count
+        = render partial: "devise/shared/comments_count", locals: {count: @target_comments_count}
+      .comments__content
+        = render partial: "devise/shared/comments_list", collection: @target_comments, as: "comment"
+    = form_for @comment, remote: true do |f|
       .comments__container
         = image_tag current_user.image, class: "user__image"
         = f.text_field :content, class: "comment_input", placeholder: "コメントする..."

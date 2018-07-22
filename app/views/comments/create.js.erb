@@ -1,0 +1,5 @@
+$(".comments__count").html("<%= j(render partial: 'devise/shared/comments_count', locals: {count: @target_comments_count}) %>");
+$(".comments__content").html("<%= j(render partial: 'devise/shared/comments_list', collection: @target_comments, as: :comment) %>");
+$("#comment_content").val("");
+
+
