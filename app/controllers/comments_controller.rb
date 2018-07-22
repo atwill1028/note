@@ -2,7 +2,8 @@ class CommentsController < ApplicationController
   LIKES = CommentLike.all.includes(:user)
   def create
     @new_comment = Comment.create(comment_params)
-    redirect_to contributes_path
+    @target_comments = @new_comment.contribute.comments
+    @target_comments_count = @target_comments.count
   end
 
   private
