@@ -6,6 +6,9 @@
         = comment.user.nickname
       %li.comment__created
         = comment.created_at.to_s
+    %i.fa.fa-ellipsis-h
+    .comment_likes.inline{id: comment.id}
+      = render partial: "devise/shared/comment_like", locals: { comment: comment, like: CommentsController::LIKES.find_by(user_id: current_user.id, comment_id: comment.id) }
   .comment__content
     .contents
       = truncate(simple_format(comment.content), length: ContributesController::CONTENT_MAX_LENGTH)

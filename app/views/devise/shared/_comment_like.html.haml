@@ -1,0 +1,21 @@
+%ul.action.inline
+  - if user_signed_in?
+    - if comment.like_user(current_user.id)
+      %li.like.inline
+        = link_to comment_comment_like_path(comment,like), method: :delete, remote: true do
+          = image_tag "liked_icon"
+      %li.like__count.inline
+        = comment.likes_count
+    - else
+      %li.like.inline
+        = link_to comment_comment_likes_path(comment), method: :post, remote: true do
+          = image_tag "like_icon", class: "like__icon"
+      %li.like__count.inline
+        - if comment.likes_count.to_i >= 1
+          = comment.likes_count
+  - else
+    %li.like.inline
+      = image_tag "like_icon", class: "like__icon"
+    %li.like__count.inline
+      - if comment.likes_count.to_i >=1
+        = comment.likes_count
