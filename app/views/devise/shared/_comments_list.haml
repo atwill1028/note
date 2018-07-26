@@ -6,7 +6,17 @@
         = comment.user.nickname
       %li.comment__created
         = comment.created_at.to_s
-    %i.fa.fa-ellipsis-h
+    %i.fa.fa-ellipsis-h{id: "ellipshis" + "#{comment.id}"}
+      .balloon.inline{id: "balloon" + "#{comment.id}"}
+        %ul
+          -if current_user.id == comment.user.id
+            %li.comment__edit
+              編集
+            %li.comment__delete
+              削除
+          -else
+            %li.comment__report
+              報告する
     .comment_likes.inline{id: comment.id}
       = render partial: "devise/shared/comment_like", locals: { comment: comment, like: CommentsController::LIKES.find_by(user_id: current_user.id, comment_id: comment.id) }
   .comment__content
