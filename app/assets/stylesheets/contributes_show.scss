@@ -1,3 +1,68 @@
+.comment__overlay {
+  z-index: 2;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-color: rgba(0,0,0,0.5);
+}
+.comment__box {
+  display: none;
+  z-index: 3;
+  position: fixed;
+  width: 400px;
+  border-radius: 15px;
+  background-color: $mainWhiteColor;
+  top: 100px;
+  left: 33%;
+  box-sizing: border-box;
+
+  &__header {
+    font-size: 16px;
+    padding: 15px 0;
+    font-weight: bold;
+    background-color: $mainWhiteColor;
+    text-align: center;
+    border-bottom: 1px solid $borderColor;
+  }
+  &__content {
+    text-align: center;
+    padding: 30px;
+    font-size: 12px;
+    box-sizing: border-box;
+  }
+  &__footer {
+    box-sizing: border-box;
+    padding: 10px;
+    height: 50px;
+    font-size: 12px;
+    border-top: 1px solid $borderColor;
+    background-color: $backGreyColor;
+
+    .comment__delete__button {
+      float: left;
+      color: #ED4956;
+      border: 1px solid #ED4956;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+
+      .delete_link {
+        color: #ED4956;
+        text-decoration: none;
+      }
+    }
+    .comment__cancel__button {
+      float: right;
+      padding: 5px 10px;
+      border: 1px solid #e8eceb;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}
 .target {
   background-color: $mainWhiteColor;
   border-top: 1px solid rgba(0,0,0,0.15);
@@ -165,12 +230,55 @@
               color: #787c7b;
             }
           }
+
          .fa.fa-ellipsis-h {
-            margin-left: 300px;
-            cursor: pointer;
-            color: #787c7b;
-            position: relative;
-            bottom: 6px;
+           margin-left: 320px;
+           cursor: pointer;
+           color: #787c7b;
+           position: relative;
+           bottom: 6px;
+
+          .balloon {
+            display: none;
+            width: 170px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.25), 0 0 1px rgba(0,0,0,0.35);
+            border-radius: 5px;
+            color: $blackColor;
+            font-size: 12px;
+            padding: 8px 0;
+            position: absolute;
+            bottom: 25px;
+            right: 1px;
+            z-index: 1;
+            background-color: $mainWhiteColor;
+            min-height: 44px;
+
+              .comment__edit, .comment__delete {
+                padding: 5px 15px;
+                cursor: pointer;
+              }
+              .comment__report {
+                cursor: pointer;
+                padding: 5px 15px;
+                margin: 10px 0px;
+              }
+           }
+          .balloon:before {
+            content: "";
+            border: 12px solid transparent;
+            border-top: 12px solid rgba(0,0,0,0.25);
+            position: absolute;
+            top: 60px;
+            right: 1%;
+          }
+          .balloon:after {
+            content: "";
+            border: 12px solid transparent;
+            border-top: 12px solid $mainWhiteColor;
+            position: absolute;
+            top: 59px;
+            right: 1%;
+          }
          }
         }
       }

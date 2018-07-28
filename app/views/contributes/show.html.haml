@@ -1,4 +1,16 @@
 = render "devise/shared/contributes_only_header"
+.comment__overlay
+.comment__box
+  .comment__box__header
+    コメントの削除
+  .comment__box__content
+    コメントを削除します。よろしいですか？
+  .comment__box__footer
+    %ul
+      %li.comment__delete__button.toggle__key
+        削除
+      %li.comment__cancel__button.toggle__key
+        キャンセル
 .target
   .target_contribute
     -if @target_contribute.image?
@@ -55,8 +67,9 @@
         = render partial: "devise/shared/comments_list", collection: @target_comments, as: "comment"
     = form_for @comment, remote: true do |f|
       .comments__container
-        = image_tag current_user.image, class: "user__image"
+        = image_tag "#{current_user.image}", class: "user__image"
         = f.text_field :content, class: "comment_input", placeholder: "コメントする..."
         = f.hidden_field :contribute_id, value: "#{@target_contribute.id}"
         = f.submit "送信", id: "comment_submit"
+
 

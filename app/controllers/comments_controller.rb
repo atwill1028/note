@@ -6,6 +6,14 @@ class CommentsController < ApplicationController
     @target_comments_count = @target_comments.count
   end
 
+  def destroy
+    @delete_comment = Comment.find_by(id: params[:id])
+    @target_contribute = @delete_comment.contribute
+    @delete_comment.destroy
+    @target_comments = @target_contribute.comments
+    @target_comments_count = @target_comments.count
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:content, :contribute_id).merge(user_id: current_user.id)

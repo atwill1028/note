@@ -46,6 +46,33 @@ $(function(){
     }
   })
 
+  $(document).on("click", ".fa-ellipsis-h", function (e) {
+    var target_balloon = "balloon" + $(this).attr('id').replace("ellipshis","");
+    $("#" + target_balloon).toggle();
+  })
+
+  $(document).on({
+    'mouseenter' : function(){
+      $(this).css("background-color", "#F2F2F2");
+    },
+    'mouseleave' : function(){
+      $(this).css("background-color", "white");
+    }
+  },
+    ".comment__edit, .comment__delete, .comment__report"
+  );
+
+  $(document).on("click", ".toggle__key", function (e) {
+    $(".comment__overlay").toggle();
+    $(".comment__box").toggle();
+  });
+
+  $(document).on("click", ".comment__delete", function (e) {
+    var comment_id = $(this).parents(".balloon").attr('id').replace("balloon","");
+    var delete_link =  `<a href = /comments/${comment_id} data-method = 'delete' class = 'delete_link toggle__key' data-remote="true">削除する</a>`;
+    $(".comment__delete__button").html(delete_link);
+  });
+
   function comment_opacity(content,target_opacity){
     if (content != "") {
      $("#comment_submit").css('opacity', 1);
