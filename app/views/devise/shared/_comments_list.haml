@@ -12,7 +12,7 @@
           -if current_user.id == comment.user.id
             %li.comment__edit
               編集
-            %li.comment__delete
+            %li.comment__delete.toggle__key
               削除
           -else
             %li.comment__report
