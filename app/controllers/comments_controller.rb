@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @delete_comment = Comment.find_by(params[:id])
+    @delete_comment = Comment.find_by(id: params[:id])
     @target_contribute = @delete_comment.contribute
     @delete_comment.destroy
     @target_comments = @target_contribute.comments
