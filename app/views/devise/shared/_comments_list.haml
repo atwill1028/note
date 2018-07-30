@@ -11,7 +11,7 @@
         %ul
           -if current_user.id == comment.user.id
             %li.comment__edit
-              編集
+              = link_to "編集", edit_comment_path(comment), class: "edit__link", remote: true
             %li.comment__delete.toggle__key
               削除
           -else
@@ -19,6 +19,6 @@
               報告する
     .comment_likes.inline{id: comment.id}
       = render partial: "devise/shared/comment_like", locals: { comment: comment, like: CommentsController::LIKES.find_by(user_id: current_user.id, comment_id: comment.id) }
-  .comment__content
+  .comment__content{id: "content" + "#{comment.id}"}
     .contents
       = truncate(simple_format(comment.content), length: ContributesController::CONTENT_MAX_LENGTH)
