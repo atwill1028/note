@@ -82,6 +82,15 @@ $(function(){
     var content_html = `<div class='contents'>${content}</div>`
     $(this).parents(".comment__content").html(content_html);
   })
+
+  $(document).on('focus', '#edit_content',  function(e){
+    $("#edit_content").css("border", "1px solid #2CB696");
+  });
+
+  $(document).on('focusout', '#edit_content',  function(e){
+    $("#edit_content").css("border", "1px solid rgba(0,0,0,0.05)");
+  });
+
   function comment_opacity(content,target_opacity){
     if (content != "") {
      $("#comment_submit").css('opacity', 1);
