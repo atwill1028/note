@@ -77,6 +77,11 @@ $(function(){
     $(".comment__delete__button").html(delete_link);
   });
 
+  $(document).on("click", "#edit_cancel",function (e){
+    var content = $(this).prev().prev().prop("defaultValue");
+    var content_html = `<div class='contents'>${content}</div>`
+    $(this).parents(".comment__content").html(content_html);
+  })
   function comment_opacity(content,target_opacity){
     if (content != "") {
      $("#comment_submit").css('opacity', 1);
