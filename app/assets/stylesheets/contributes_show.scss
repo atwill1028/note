@@ -257,6 +257,13 @@
               .comment__edit, .comment__delete {
                 padding: 5px 15px;
                 cursor: pointer;
+
+                .edit__link {
+                  display: block;
+                  width: 100%;
+                  text-decoration: none;
+                  color: $blackColor;
+                }
               }
               .comment__report {
                 cursor: pointer;
