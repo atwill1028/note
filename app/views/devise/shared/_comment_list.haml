@@ -1,0 +1,3 @@
+.comment__content{id: "content" + "#{comment.id}"}
+  .contents
+    = truncate(simple_format(comment.content), length: ContributesController::CONTENT_MAX_LENGTH)
