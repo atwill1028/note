@@ -299,18 +299,16 @@
         }
       }
     }
-    .comments__container {
-      border-top: solid 1px #e6e6e6;
+    .comments__container, .edit__container {
       width: 580px;
       margin: 0 auto;
       padding-top: 24px;
       padding-bottom: 24px;
 
-      #comment_content {
+      #comment_content, #edit_content {
         margin-left: 10px;
         position: relative;
         bottom: 10px;
-        display: inline-block;
         width: 500px;
         height: 35px;
         line-height: 35px;
@@ -329,6 +327,35 @@
         color: $mainWhiteColor;
         border-radius: 5px;
       }
+      #comment_content {
+        display:inline-block;
+      }
+      #edit_content {
+        display: block;
+        border: 1px solid rgba(0,0,0,0.05);
+        border-radius: 5px;
+      }
+      #edit_submit, #edit_cancel {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 12px;
+        min-height: 32px;
+        padding: 0 16px;
+        width: 100px;
+        border-radius: 5px;
+        outline: none;
+      }
+      #edit_submit {
+        color: $mainWhiteColor;
+        background-color: $greyButtonColor;
+      }
+      #edit_cancel {
+        color: $blackColor;
+        background-color: $mainWhiteColor;
+      }
+    }
+    .comments__container {
+      border-top: solid 1px #e6e6e6;
     }
   }
   .user__image {
