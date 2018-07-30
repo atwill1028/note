@@ -51,6 +51,10 @@ $(function(){
     $("#" + target_balloon).toggle();
   })
 
+  $(document).on("click", ".edit__link", function (e) {
+    $(this).parents(".balloon").toggle();
+  })
+
   $(document).on({
     'mouseenter' : function(){
       $(this).css("background-color", "#F2F2F2");
