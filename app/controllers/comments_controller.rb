@@ -14,6 +14,16 @@ class CommentsController < ApplicationController
     @target_comments_count = @target_comments.count
   end
 
+  def edit
+    @edit_comment = Comment.find_by(id: params[:id])
+    @target_comments = @edit_comment.contribute.comments
+  end
+
+  def update
+    @update_comment = Comment.find_by(id: params[:id])
+    @update_comment.update(content: comment_params[:content])
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:content, :contribute_id).merge(user_id: current_user.id)

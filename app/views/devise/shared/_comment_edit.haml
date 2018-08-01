@@ -1,0 +1,5 @@
+= form_for comment, remote: true do |f|
+  .edit__container
+    = f.text_field :content, class: "edit_input", placeholder: "コメントする", id: "edit_content", autocomplete: "off"
+    = f.submit "保存", id: "edit_submit"
+    = button_tag "キャンセル", :type => 'button', id: "edit_cancel"

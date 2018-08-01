@@ -51,6 +51,10 @@ $(function(){
     $("#" + target_balloon).toggle();
   })
 
+  $(document).on("click", ".edit__link", function (e) {
+    $(this).parents(".balloon").toggle();
+  })
+
   $(document).on({
     'mouseenter' : function(){
       $(this).css("background-color", "#F2F2F2");
@@ -71,6 +75,20 @@ $(function(){
     var comment_id = $(this).parents(".balloon").attr('id').replace("balloon","");
     var delete_link =  `<a href = /comments/${comment_id} data-method = 'delete' class = 'delete_link toggle__key' data-remote="true">削除する</a>`;
     $(".comment__delete__button").html(delete_link);
+  });
+
+  $(document).on("click", "#edit_cancel",function (e){
+    var content = $(this).prev().prev().prop("defaultValue");
+    var content_html = `<div class='contents'>${content}</div>`
+    $(this).parents(".comment__content").html(content_html);
+  })
+
+  $(document).on('focus', '#edit_content',  function(e){
+    $("#edit_content").css("border", "1px solid #2CB696");
+  });
+
+  $(document).on('focusout', '#edit_content',  function(e){
+    $("#edit_content").css("border", "1px solid rgba(0,0,0,0.05)");
   });
 
   function comment_opacity(content,target_opacity){

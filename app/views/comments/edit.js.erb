@@ -1,0 +1,5 @@
+$(".comments__content").html("<%= j(render partial: 'devise/shared/comments_list', collection: @target_comments, as: :comment) %>");
+$("#" + "content" + <%= @edit_comment.id %>).html("<%= j(render partial: 'devise/shared/comment_edit', locals: { comment: @edit_comment}) %>");
+var value = $(".edit_input").val();
+$(".edit_input").val("");
+$(".edit_input").focus().val(value);
